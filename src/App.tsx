@@ -21,7 +21,7 @@ const App = () => (
             </div>
             <div className="about-me">
                 <Card title="About me">
-                    Hello my name is Nathan Hare, I am a year 11 student currently studding at Whangarei Boys' High
+                    Hello my name is Nathan Hare, I am a year 11 student currently studying at Whangarei Boys' High
                     School. I take Electronics, Economics, Digital Tech, Science, English and Maths. I enjoy programming
                     and experimenting with random frameworks/libraries. My preferred programming language is Rust
                     although I am competent with many others including C++, Java, C#, TypeScript/JavaScript, and Python.
@@ -49,11 +49,11 @@ const App = () => (
                     </Card>
                     <Card title="brrrLang" sub="A weired programming language"
                           subLinks={[{href: "https://github.com/brrrLang/brrrlang", text:"GitHub Repo"}]}>
-                        A weird programming language that I came up with one day while I was board.
+                        A weird programming language that I came up with one day while I was bored.
                     </Card>
                     <Card title="The Big Send" sub="Science Fair 2020"
                           subLinks={[{href: "https://github.com/laspruca/thebigsend", text:"GitHub Repo"}]}>
-                        This was my science fair project for 2020. It was a simple app desiged to help event/club
+                        This was my science fair project for 2020. It was a simple app designed to help event/club
                         organisers, or anyone who may need to, send out a text message to a large number of people.
                     </Card>
                 </div>
