@@ -21,13 +21,13 @@
 
 .social {
   width: 20%;
-  margin: 10px auto;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
 }
 
   .social img {
-      width: 35px;
+      width: 50px;
       padding: 10px;
   }
 
