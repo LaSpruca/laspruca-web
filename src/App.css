@@ -1,10 +1,22 @@
-.App {
+.name {
+  height: 100vh;
   text-align: center;
+  justify-content: center;
+  background-color: var(--primay);
+  margin: auto;
+  color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-shadow: 0 5px 10px var(--primay);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .social {
@@ -14,31 +26,32 @@
   justify-content: center;
 }
 
-.social img {
-    width: 35px;
-    padding: 10px;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .social img {
+      width: 35px;
+      padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+.about-me {
+  padding: 20px;
+}
+
+.projects {
+  padding: 3rem;
+  text-align: center;
+}
+
+  .projects h1 {
+    font-weight: 900;
+  }
+
+.cards {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 630px) {
+  .cards {
+    grid-template-columns: auto;
   }
 }
