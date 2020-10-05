@@ -38,8 +38,8 @@ const App = () => (
                         the website more than what was allowed by wardress.
                     </Card>
                     <Card title="LaSpruca.tk" sub="This website"
-                          subLinks={[{href: "https://github.com/laspruca/laspruca-tk", text:"GitHub Repo"},
-                              {href: "https://laspuca.tk/", text: "Website"}]}>
+                          subLinks={[{href: "https://laspuca.tk/", text: "Website"},
+                              {href: "https://github.com/laspruca/laspruca-tk", text:"GitHub Repo"}]}>
                         My website, brrr
                     </Card>
                     <Card title="TCPlugin" sub="Technocraft server plugin"
@@ -55,6 +55,12 @@ const App = () => (
                           subLinks={[{href: "https://github.com/laspruca/thebigsend", text:"GitHub Repo"}]}>
                         This was my science fair project for 2020. It was a simple app designed to help event/club
                         organisers, or anyone who may need to, send out a text message to a large number of people.
+                    </Card>
+                    <Card title="Snake" sub="Snake with rust and wasm" subLinks={[
+                        {href: "https://snake.laspruca.tk", text:"Website"},
+                        {href: "https://github.com/LaSpruca/SNEEEK", text: "GitHub Repo"}]}>
+                        GAMEING. It be snake, but snaken't. I tried using regular js but discovered that it's many qurks
+                        annoyed me so I used rus and wasm.
                     </Card>
                 </div>
 

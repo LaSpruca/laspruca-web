@@ -7,7 +7,7 @@ type Link = {
 }
 
 type CardProps = {
-    children?: string | never[],
+    children?: string | React.Component[] | never[],
     title: string,
     sub?: string,
     subLinks?: Link[]
