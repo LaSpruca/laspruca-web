@@ -1,2 +1,2 @@
-# LaSpruca.tk
-[cashmoneyness](https://laspruca.tk)
+# My wbesite 
+[cashmoneyness](https://laspruca.nz)
