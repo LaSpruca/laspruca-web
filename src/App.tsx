@@ -32,14 +32,14 @@ const App = () => (
                 <h1>Recent Projects</h1>
                 <div className="cards">
                     <Card title="Imgaine Tai Tokerau" sub="A Website for Imagine Tai Tokerau"
-                          subLinks={[{href: "https://itt.laspruca.tk/", text: "Website"},
+                          subLinks={[{href: "https://itt.laspruca.nz/", text: "Website"},
                               {href: "https://github.com/laspruca/imaginetaitokerau", text: "GitHub Reop"}]}>
                         A website for a small community hackethon in northland, that allows the organizers to customize
                         the website more than what was allowed by wardress.
                     </Card>
-                    <Card title="LaSpruca.tk" sub="This website"
-                          subLinks={[{href: "https://laspuca.tk/", text: "Website"},
-                              {href: "https://github.com/laspruca/laspruca-tk", text:"GitHub Repo"}]}>
+                    <Card title="My Protfolio Website" sub="This website"
+                          subLinks={[{href: "https://laspruca.nz/", text: "Website"},
+                              {href: "https://github.com/LaSpruca/laspruca-web", text:"GitHub Repo"}]}>
                         My website, brrr
                     </Card>
                     <Card title="TCPlugin" sub="Technocraft server plugin"
@@ -57,7 +57,7 @@ const App = () => (
                         organisers, or anyone who may need to, send out a text message to a large number of people.
                     </Card>
                     <Card title="Snake" sub="Snake with rust and wasm" subLinks={[
-                        {href: "https://snake.laspruca.tk", text:"Website"},
+                        {href: "https://snake.laspruca.nz", text:"Website"},
                         {href: "https://github.com/LaSpruca/SNEEEK", text: "GitHub Repo"}]}>
                         GAMEING. It be snake, but snaken't. I tried using regular js but discovered that it's many qurks
                         annoyed me so I used rus and wasm.
