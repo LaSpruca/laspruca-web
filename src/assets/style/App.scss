@@ -53,6 +53,10 @@ code {
   }
 }
 
+.about-me-wrap {
+  filter: drop-shadow(-1px 6px 3px $primary);
+}
+
 .about-me {
   width: 100%;
   margin-top: 10rem;
@@ -60,6 +64,11 @@ code {
 
   background: $primary;
   box-shadow: $primary 0 0 30px;
+
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+
+  padding: 10rem;
+
   .content {
     padding: 3rem;
     display: flex;
@@ -96,6 +105,20 @@ code {
 
     p {
       color: $secondary;
+      padding-bottom: 1rem;
+    }
+
+    p:last-child {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-me {
+    clip-path: none;
+    .content {
+      padding: 0;
     }
   }
 }
