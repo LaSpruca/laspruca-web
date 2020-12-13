@@ -1,0 +1,159 @@
+@import 'shared';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #222;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.name {
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  background-color: $primary;
+  margin: auto;
+  color: $secondary;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-shadow: 0 5px 10px $primary;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.social {
+  width: 20%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 50px;
+    padding: 10px;
+  }
+}
+
+.about-me-wrap {
+  filter: drop-shadow(-1px 6px 3px $primary);
+}
+
+.about-me {
+  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 30px;
+
+  background: $primary;
+  box-shadow: $primary 0 0 30px;
+
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+
+  padding: 10rem;
+
+  .content {
+    padding: 3rem;
+    display: flex;
+
+    .left, .right {
+      width: 50%;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      color: $secondary;
+      margin-left: 10px;
+    }
+
+    ul {
+      list-style: none;
+      color: $secondary;
+
+      padding-left: 20px;
+
+      li {
+        margin-left: 0;
+        padding: 1rem 1rem 1rem 0px;
+
+        span {
+          padding-right: 20px;
+        }
+      }
+    }
+
+    p {
+      color: $secondary;
+      padding-bottom: 1rem;
+    }
+
+    p:last-child {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-me {
+    clip-path: none;
+    .content {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .about-me .content {
+    flex-direction: column;
+    .left, .right {
+      width: 100%;
+    }
+
+    .left {
+      text-align: center;
+    }
+  }
+}
+
+.projects {
+  padding: 3rem;
+  text-align: center;
+
+  h1 {
+    font-weight: 900;
+    color: $header-color;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 630px) {
+  .cards {
+    grid-template-columns: auto;
+  }
+}

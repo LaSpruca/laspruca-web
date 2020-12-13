@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cards.css';
+import '../assets/style/Cards.scss';
 
 type Link = {
     href: string,
