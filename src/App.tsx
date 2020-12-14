@@ -66,10 +66,14 @@ const App = () => (
                 Science, Economics, and English. I have competed in Science
                 Fair, and have managed to win awards at the regional competition
                 twice now. At Questionable, I help many of the younger attendees
-                with their projects as best I can. As a developer, I mostly use
-                programming languages such as Rust, which is my favorites at the
-                moment, TypeScript, Java, C++. I am not a fan of JavaScript,
-                Python, call me crazy, and other languages like that.
+                with their projects as best I can.
+              </p>
+              <p>
+                As a developer, I mostly use programming languages such as Rust,
+                which is my preferred atm, TypeScript, Java, C++. My preferred
+                areas of development are: Native Apps and Backend (NOT in php).
+                I work with, Flutter, React (using TypeScript), Unity Engine,
+                Linux, Firebase, GitHub, Actix Web, Spigot and others.
               </p>
             </div>
           </div>
@@ -79,21 +83,6 @@ const App = () => (
       <div className="projects">
         <h1>Recent Projects</h1>
         <div className="cards">
-          <Card
-            title="Imgaine Tai Tokerau"
-            sub="A Website for Imagine Tai Tokerau"
-            subLinks={[
-              { href: "https://itt.laspruca.nz/", text: "Website" },
-              {
-                href: "https://github.com/laspruca/imaginetaitokerau",
-                text: "GitHub Reop",
-              },
-            ]}
-          >
-            A website for a small community hackethon in northland, that allows
-            the organizers to customize the website more than what was allowed
-            by wardress.
-          </Card>
           <Card
             title="My Protfolio Website"
             sub="This website"
@@ -105,7 +94,7 @@ const App = () => (
               },
             ]}
           >
-            My website, brrr
+            A website about me, what you are looking at.
           </Card>
           <Card
             title="TCPlugin"
@@ -118,7 +107,7 @@ const App = () => (
             ]}
           >
             A plugin to help with the admin of the Technocraft Survival Server,
-            with random and stupid features to meet our needs.
+            with features to meet our administrative and entertainment needs.
           </Card>
           <Card
             title="brrrLang"
@@ -130,8 +119,8 @@ const App = () => (
               },
             ]}
           >
-            A weird programming language that I came up with one day while I was
-            bored.
+            A small side project about making a compiled, statically typed
+            programming language
           </Card>
           <Card
             title="The Big Send"
@@ -144,7 +133,7 @@ const App = () => (
             ]}
           >
             This was my science fair project for 2020. It was a simple app
-            designed to help event/club organisers, or anyone who may need to,
+            designed to help event/club organizers, or anyone who may need to,
             send out a text message to a large number of people.
           </Card>
           <Card
@@ -158,8 +147,25 @@ const App = () => (
               },
             ]}
           >
-            GAMEING. It be snake, but snaken't. I tried using regular js but
-            discovered that it's many qurks annoyed me so I used rus and wasm.
+            A small snake game that I made because I was board. It uses rust and
+            web assembly for some parts because I was getting fed up with
+            writing the code in JS.
+          </Card>
+          <Card
+            title="EsquaredG"
+            sub="Science Fair 2021"
+            subLinks={[
+              {
+                href:
+                  "https://github.com/Questionable-Research-Labs/EsquaredG_PicoscopeMonitering",
+                text: "GitHub Repo",
+              },
+            ]}
+          >
+            This a collaboration project between myself and Jasper Miller-Waugh,
+            and will be our entry for the 2021 Science Fair. It focuses on using
+            an oscilloscope as a EEG device, allowing us to multiplex channels
+            together, making large channel EEG cheeper.
           </Card>
         </div>
       </div>

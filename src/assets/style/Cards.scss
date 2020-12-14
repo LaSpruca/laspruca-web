@@ -1,15 +1,29 @@
-@import 'shared';
+@import "shared";
+
+.card-wrapper {
+  margin: 10px;
+  padding: 10px;
+  filter: drop-shadow(0 0 15px #111);
+
+  &:nth-child(even) {
+    .card {
+      clip-path: polygon(100% 0, 0 10%, 0 90%, 100% 100%);
+    }
+  }
+
+  &:nth-child(odd) {
+    .card {
+      clip-path: polygon(100% 10%, 0 0, 0 100%, 100% 90%);
+    }
+  }
+}
 
 .card {
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px 1px $primary;
-  padding: 10px;
+  padding: 5rem;
   background-color: $primary;
   color: $secondary;
   transition: all 150ms linear;
   text-align: center;
-  border: 2px solid #232323;
 
   &:hover {
     transform: scale(1.01);
@@ -43,7 +57,7 @@
     font-weight: normal;
 
     &:visited {
-      color: #A0A0A0;
+      color: #a0a0a0;
       text-decoration: none;
       font-weight: normal;
     }
