@@ -19,6 +19,10 @@
 }
 
 .card {
+  @media screen and (max-width: 1300px) {
+    padding: 2.5rem;
+  }
+
   padding: 5rem;
   background-color: $primary;
   color: $secondary;
@@ -26,7 +30,7 @@
   text-align: center;
 
   &:hover {
-    transform: scale(1.01);
+    transform: scale(1.05);
   }
 
   .title {
