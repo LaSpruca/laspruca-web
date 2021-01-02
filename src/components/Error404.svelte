@@ -39,12 +39,20 @@
     h6:first-child {
       padding-top: 0.5rem;
     }
+
+    a {
+      color: #808080;
+      text-decoration: none;
+      font-weight: normal;
+
+      &:visited {
+        color: #a0a0a0;
+        text-decoration: none;
+        font-weight: normal;
+      }
+    }
   }
 </style>
-
-<svelte:head>
-    <title>404 - Page not found - LaSpruca</title>
-</svelte:head>
 
 <div class="error-wrapper">
     <div class="error">
@@ -56,5 +64,6 @@
         <h6>
             Unless I <strong>actually</strong> need it
         </h6>
+        <a href="/">Home?</a>
     </div>
 </div>
