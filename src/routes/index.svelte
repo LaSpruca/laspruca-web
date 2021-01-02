@@ -10,7 +10,7 @@
 </style>
 
 <svelte:head>
-    <title>LaSpruce - Semi-Professional Googler</title>
+    <title>LaSpruca - Semi-Professional Googler</title>
 </svelte:head>
 
 <div class="app">

@@ -10,7 +10,7 @@
 </script>
 
 <style lang="scss">
-    @import "../node_modules/assets/style/components/Card";
+  @import "../node_modules/assets/style/components/Card";
 </style>
 
 <div class="card-wrapper">
@@ -19,15 +19,19 @@
             <h2>{title}</h2>
             <h4>{sub}</h4>
             {#if (subLinks !== undefined)}
-                {#each subLinks as link}
-                    <h6>
-                        <a href={link.href}>
-                            {link.text}
-                        </a>
-                    </h6>
-                {/each}
+                <div class="links">
+                    {#each subLinks as link}
+                        <h6>
+                            <a href={link.href}>
+                                {link.text}
+                            </a>
+                        </h6>
+                    {/each}
+                </div>
             {/if}
         </div>
-        <p><slot /></p>
+        <p>
+            <slot/>
+        </p>
     </div>
 </div>
