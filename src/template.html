@@ -29,8 +29,23 @@
     %sapper.head%
 </head>
 <body>
-<!-- The application will be rendered inside this element,
-     because `src/client.js` references it -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyA5R1JwqGelV2YarxWPLVdsY7G1wJ1fGws",
+        authDomain: "laspruca-tk.firebaseapp.com",
+        databaseURL: "https://laspruca-tk.firebaseio.com",
+        projectId: "laspruca-tk",
+        storageBucket: "laspruca-tk.appspot.com",
+        messagingSenderId: "1021241299136",
+        appId: "1:1021241299136:web:264be3bd1d40e7c622dd25",
+        measurementId: "G-H4XQ4YZRSM"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+
 <div id="sapper">%sapper.html%</div>
 </body>
 </html>
