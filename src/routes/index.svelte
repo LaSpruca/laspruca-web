@@ -1,38 +1,66 @@
-<script type="ts">
-    import Card from "../components/Card.svelte";
-    import gh from "assets/image/gh.svg";
-    import reddit from "assets/image/reddit.svg";
-    import logo from "assets/image/logo.svg";
+<script lang="ts">
+  import Card from "../components/Card.svelte";
+  import gh from "assets/image/gh.svg";
+  import reddit from "assets/image/reddit.svg";
+  import logo from "assets/image/logo.svg";
 
-    type ProjectPage = {
-        slug: string,
-        metadata: {
-            title: string,
-            description: string,
-            summary: string,
-            dataString: string,
-            subLinks: {
-               href: string,
-               text: string
-            }[]
-        },
-        html: string;
-    }
+  type ProjectPage = {
+    slug: string,
+    metadata: {
+      title: string,
+      description: string,
+      summary: string,
+      dataString: string,
+      subLinks: {
+        href: string,
+        text: string
+      }[]
+    },
+    html: string
+  }
 
-    export let pages: ProjectPage[];
+  export let pages: ProjectPage[];
 </script>
 
-<script context="module">
-    export async function preload(page, session) {
-        const res = await this.fetch(`proj/all-projects.json`);
-        const pages = await res.json();
+<script context="module" lang="ts">
+  type ProjectPage = {
+    slug: string,
+    metadata: {
+      title: string,
+      description: string,
+      summary: string,
+      dataString: string,
+      subLinks: {
+        href: string,
+        text: string
+      }[]
+    },
+    html: string
+  }
 
-        if (res.status === 200) {
-            return { pages };
-        } else {
-            this.error(res.status, res.message);
-        }
+  export async function preload(page, session) {
+    const res = await this.fetch(`proj/all-projects.json`);
+    const pages: ProjectPage[] = await res.json();
+
+    pages.sort((a, b) => {
+      let d1 = new Date(a.metadata.dataString);
+      let d2 = new Date(b.metadata.dataString);
+
+      if (d1 > d2) {
+        return 1;
+      } else if (d1 < d2) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+
+    if (res.status === 200) {
+      return {pages};
+    } else {
+      this.error(res.status, res.message);
     }
+  }
 </script>
 
 <style lang="scss">
@@ -68,25 +96,25 @@
                         <ul>
                             <li>
                                 <h3>
-                <span role="img" aria-label="Computer">
-                  💻
-                </span>
+                                    <span role="img" aria-label="Computer">
+                                      💻
+                                    </span>
                                     Software Developer
                                 </h3>
                             </li>
                             <li>
                                 <h3>
-                <span role="img" aria-label="Open Book">
-                  📖
-                </span>
+                                    <span role="img" aria-label="Open Book">
+                                      📖
+                                    </span>
                                     Student
                                 </h3>
                             </li>
                             <li>
                                 <h3>
-                <span role="img" aria-label="New Zealand Flag">
-                  🇳🇿
-                </span>
+                                    <span role="img" aria-label="New Zealand Flag">
+                                      🇳🇿
+                                    </span>
                                     Whangarei, New Zealand
                                 </h3>
                             </li>
@@ -122,9 +150,7 @@
             <div class="cards">
                 {#each pages as project}
                     <Card
-                            onClick={() => {
-                                window.location.href = `/proj/${project.slug}`;
-                            }}
+                            name="/proj/{project.slug}"
                             title="{project.metadata.title}"
                             sub="{project.metadata.description}"
                             subLinks="{project.metadata.subLinks}"

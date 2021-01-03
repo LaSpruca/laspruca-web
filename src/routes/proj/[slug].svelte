@@ -7,8 +7,6 @@
 
 <script context="module">
     export async function preload({params}) {
-        // the `slug` parameter is available because
-        // this file is called [slug].html
         const res = await this.fetch(`/proj/${params.slug}.json`);
         console.log(res.status);
         const data = await res.json();
@@ -34,9 +32,11 @@
 <Header />
 
 <section class='content'>
-    <header>
+    <div class="title-block">
         <h1>{post.metadata.title}</h1>
         <p><small>{post.metadata.date}</small></p>
-    </header>
-    {@html post.html}
+    </div>
+    <div class="body">
+        {@html post.html}
+    </div>
 </section>
