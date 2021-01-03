@@ -122,7 +122,9 @@
             <div class="cards">
                 {#each pages as project}
                     <Card
-                            onClick={() => {window.location = `/proj/${project.slug}`}}
+                            onClick={() => {
+                                window.location.href = `/proj/${project.slug}`;
+                            }}
                             title="{project.metadata.title}"
                             sub="{project.metadata.description}"
                             subLinks="{project.metadata.subLinks}"

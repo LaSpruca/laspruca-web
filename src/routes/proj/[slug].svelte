@@ -1,4 +1,7 @@
+<!-- Layout for all the projects -->
+
 <script lang="ts">
+    import Header from "../../components/Header.svelte";
     export let post: any;
 </script>
 
@@ -27,6 +30,8 @@
           content="{post.metadata.description}"/>
     <title>{post.metadata.title}</title>
 </svelte:head>
+
+<Header />
 
 <section class='content'>
     <header>
