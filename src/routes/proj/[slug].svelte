@@ -1,25 +1,27 @@
 <!-- Layout for all the projects -->
 
 <script lang="ts">
-    import Header from "../../components/Header.svelte";
-    export let post: any;
+  import Header from "../../components/Header.svelte";
+  // import {ProjectPage} from "../_types";
+
+  export let post/*: ProjectPage */;
 </script>
 
 <script context="module">
-    export async function preload({params}) {
-        const res = await this.fetch(`/proj/${params.slug}.json`);
-        console.log(res.status);
-        const data = await res.json();
-        if (res.status === 200) {
-            return {post: data};
-        } else {
-            this.error(res.status, data.message);
-        }
+  export async function preload({params}) {
+    const res = await this.fetch(`/proj/${params.slug}.json`);
+    console.log(res.status);
+    const data = await res.json();
+    if (res.status === 200) {
+      return {post: data};
+    } else {
+      this.error(res.status, data.message);
     }
+  }
 </script>
 
 <style lang="scss">
-    @import "../../node_modules/assets/style/routes/proj";
+  @import "../../node_modules/assets/style/routes/proj";
 </style>
 
 <svelte:head>
@@ -29,12 +31,15 @@
     <title>{post.metadata.title}</title>
 </svelte:head>
 
-<Header />
+<Header/>
 
 <section class='content'>
     <div class="title-block">
         <h1>{post.metadata.title}</h1>
-        <p><small>{post.metadata.date}</small></p>
+        <p><small>{post.metadata.dataString}</small></p>
+        {#each post.metadata.subLinks as link}
+            <a href="{link.href}">{link.text}</a>
+        {/each}
     </div>
     <div class="body">
         {@html post.html}

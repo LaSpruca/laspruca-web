@@ -74,7 +74,7 @@
                 Unless I <strong>actually</strong> need it
             </h6>
         {:else}
-            <h3> {error} </h3>
+            <h3> {error.message} </h3>
         {/if}
         <a href="/">Home</a>
     </div>

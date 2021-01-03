@@ -67,8 +67,8 @@ export default {
 
 			!dev && terser({
 				module: true
-			})
-		],
+			}),
+    ],
 
 		preserveEntrySignatures: false,
 		onwarn,

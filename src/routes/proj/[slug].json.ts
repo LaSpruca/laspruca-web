@@ -14,10 +14,6 @@ export function get(req, res) {
 
     const json = lookup.get(slug);
 
-    console.log(lookup.keys());
-
-    console.log(slug);
-
     if (json) {
         res.writeHead(200, {
             'Content-Type': 'application/json'

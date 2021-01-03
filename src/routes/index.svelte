@@ -4,43 +4,15 @@
   import reddit from "assets/image/reddit.svg";
   import logo from "assets/image/logo.svg";
 
-  type ProjectPage = {
-    slug: string,
-    metadata: {
-      title: string,
-      description: string,
-      summary: string,
-      dataString: string,
-      subLinks: {
-        href: string,
-        text: string
-      }[]
-    },
-    html: string
-  }
-
-  export let pages: ProjectPage[];
+  export let pages/*: ProjectPage */;
 </script>
 
 <script context="module" lang="ts">
-  type ProjectPage = {
-    slug: string,
-    metadata: {
-      title: string,
-      description: string,
-      summary: string,
-      dataString: string,
-      subLinks: {
-        href: string,
-        text: string
-      }[]
-    },
-    html: string
-  }
+  // import {ProjectPage} from "./_types.ts";
 
   export async function preload(page, session) {
     const res = await this.fetch(`proj/all-projects.json`);
-    const pages: ProjectPage[] = await res.json();
+    const pages/*: ProjectPage */ = await res.json();
 
     pages.sort((a, b) => {
       let d1 = new Date(a.metadata.dataString);
