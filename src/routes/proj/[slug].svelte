@@ -1,3 +1,26 @@
+<script lang="ts">
+    export let post: any;
+</script>
+
+<script context="module">
+    export async function preload({params}) {
+        // the `slug` parameter is available because
+        // this file is called [slug].html
+        const res = await this.fetch(`/proj/${params.slug}.json`);
+        console.log(res.status);
+        const data = await res.json();
+        if (res.status === 200) {
+            return {post: data};
+        } else {
+            this.error(res.status, data.message);
+        }
+    }
+</script>
+
+<style lang="scss">
+    @import "../../node_modules/assets/style/routes/proj";
+</style>
+
 <svelte:head>
     <meta name="title" content="{post.metadata.title} | LaSpruca Semi-Professional Googler"/>
     <meta name="description"
@@ -12,24 +35,3 @@
     </header>
     {@html post.html}
 </section>
-
-<style>
-</style>
-
-<script>
-    export let post;
-</script>
-
-<script context="module">
-    export async function preload({params}) {
-        // the `slug` parameter is available because
-        // this file is called [slug].html
-        const res = await this.fetch(`/proj/${params.slug}.json`);
-        const data = await res.json();
-        if (res.status === 200) {
-            return {post: data};
-        } else {
-            this.error(res.status, data.message);
-        }
-    }
-</script>

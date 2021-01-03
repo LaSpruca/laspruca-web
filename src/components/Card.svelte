@@ -7,6 +7,7 @@
     export let title: string;
     export let sub: string;
     export let subLinks: CardLink[];
+    export let onClick: () => void;
 </script>
 
 <style lang="scss">
@@ -14,7 +15,7 @@
 </style>
 
 <div class="card-wrapper">
-    <div class="card">
+    <div class="card" on:click={onClick}>
         <div class="title">
             <h2>{title}</h2>
             <h4>{sub}</h4>

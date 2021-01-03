@@ -1,10 +1,7 @@
 ---
-title: project go brrr
-summary: brrr
-description: Yes it go brrr
-subLinks:
-    - href: https://google.com
-      text: Google just bc
+title: Yes go brrr
+summary: Yes
+description: no.
 date: 2021-01-03
 ---
 
