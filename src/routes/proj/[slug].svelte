@@ -27,7 +27,7 @@
     <meta name="title" content="{post.metadata.title} | LaSpruca Semi-Professional Googler"/>
     <meta name="description"
           content="{post.metadata.description}"/>
-    <title>{post.metadata.title}</title>
+    <title>{post.metadata.title} | LaSpruca Semi-Professional Googler</title>
 </svelte:head>
 
 <Header/>
