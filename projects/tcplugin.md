@@ -6,7 +6,7 @@ summary: "A plugin to help with the admin of the Technocraft Survival Server,
 subLinks:
     - href: https://github.com/questionable-research-labs/tcplugin
       text: GitHub Repo
-date: 2021-04-01 
+date: 2021-01-04 
 ---
 This was a plugin I have made to use on the techocraft server (mc.qrl.nz if you are interested). I made it because we
 had some random, fun, and some utility functions for us to use on the server

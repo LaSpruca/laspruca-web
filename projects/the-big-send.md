@@ -5,7 +5,7 @@ summary: "An application to send out a text message a large number of phone numb
 subLinks:
 - href: https://github.com/laspruca/thebigsend
   text: GitHub Repo
-date: 2021-04-01
+date: 2021-01-04
 ---
 This was my science fair entry for 2020 Central Northland Science Fair, a science fair for high school students in
 New Zealand. I got the idea after an employee of the Northland DHB asked for an application of this type, the other 
