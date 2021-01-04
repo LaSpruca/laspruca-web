@@ -1,8 +1,25 @@
-<script>
-    import Card from "../components/Card.svelte";
-    import gh from "assets/image/gh.svg";
-    import reddit from "assets/image/reddit.svg";
-    import logo from "assets/image/logo.svg";
+<script lang="ts">
+  import Card from "../components/Card.svelte";
+  import gh from "assets/image/gh.svg";
+  import reddit from "assets/image/reddit.svg";
+  import logo from "assets/image/logo.svg";
+
+  export let pages/*: ProjectPage */;
+</script>
+
+<script context="module" lang="ts">
+  // import {ProjectPage} from "./_types.ts";
+
+  export async function preload(page, session) {
+    const res = await this.fetch(`proj/recent.json`);
+    const pages/*: ProjectPage */ = await res.json();
+
+    if (res.status === 200) {
+      return {pages};
+    } else {
+      this.error(res.status, res.message);
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -21,10 +38,10 @@
             <p>LaSpruca</p>
             <div class="social">
                 <a href="https://github.com/laspruca">
-                    <img src={gh} alt=""/>
+                    <img src={gh} alt="My GitHub"/>
                 </a>
                 <a href="https://www.reddit.com/user/laspruca">
-                    <img src={reddit} alt=""/>
+                    <img src={reddit} alt="My Reddit"/>
                 </a>
             </div>
         </div>
@@ -38,25 +55,25 @@
                         <ul>
                             <li>
                                 <h3>
-                <span role="img" aria-label="Computer">
-                  💻
-                </span>
+                                    <span role="img" aria-label="Computer">
+                                      💻
+                                    </span>
                                     Software Developer
                                 </h3>
                             </li>
                             <li>
                                 <h3>
-                <span role="img" aria-label="Open Book">
-                  📖
-                </span>
+                                    <span role="img" aria-label="Open Book">
+                                      📖
+                                    </span>
                                     Student
                                 </h3>
                             </li>
                             <li>
                                 <h3>
-                <span role="img" aria-label="New Zealand Flag">
-                  🇳🇿
-                </span>
+                                    <span role="img" aria-label="New Zealand Flag">
+                                      🇳🇿
+                                    </span>
                                     Whangarei, New Zealand
                                 </h3>
                             </li>
@@ -90,91 +107,16 @@
         <div class="projects">
             <h1>Recent Projects</h1>
             <div class="cards">
-                <Card
-                        title="My Protfolio Website"
-                        sub="This website"
-                        subLinks={[
-                { href: "https://laspruca.nz/", text: "Website" },
-                {
-                  href: "https://github.com/LaSpruca/laspruca-web",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    A website about me, what you are looking at.
-                </Card>
-                <Card
-                        title="TCPlugin"
-                        sub="Technocraft server plugin"
-                        subLinks={[
-                {
-                  href: "https://github.com/laspruca/laspruca-tk",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    A plugin to help with the admin of the Technocraft Survival
-                    Server, with features to meet our administrative and entertainment
-                    needs.
-                </Card>
-                <Card
-                        title="brrrLang"
-                        sub="A weired programming language"
-                        subLinks={[
-                {
-                  href: "https://github.com/brrrLang/brrrlang",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    A small side project about making a compiled, statically typed
-                    programming language
-                </Card>
-                <Card
-                        title="The Big Send"
-                        sub="Science Fair 2020"
-                        subLinks={[
-                {
-                  href: "https://github.com/laspruca/thebigsend",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    This was my science fair project for 2020. It was a simple app
-                    designed to help event/club organizers, or anyone who may need to,
-                    send out a text message to a large number of people.
-                </Card>
-                <Card
-                        title="Snake"
-                        sub="Snake with rust and wasm"
-                        subLinks={[
-                { href: "https://snake.laspruca.nz", text: "Website" },
-                {
-                  href: "https://github.com/LaSpruca/SNEEEK",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    A small snake game that I made because I was board. It uses rust
-                    and web assembly for some parts because I was getting fed up with
-                    writing the code in JS.
-                </Card>
-                <Card
-                        title="EsquaredG"
-                        sub="Science Fair 2021"
-                        subLinks={[
-                {
-                  href:
-                    "https://github.com/Questionable-Research-Labs/EsquaredG_PicoscopeMonitering",
-                  text: "GitHub Repo",
-                },
-              ]}
-                >
-                    This a collaboration project between myself and Jasper
-                    Miller-Waugh, and will be our entry for the 2021 Science Fair. It
-                    focuses on using an oscilloscope as a EEG device, allowing us to
-                    multiplex channels together, making large channel EEG cheeper.
-                </Card>
+                {#each pages as project}
+                    <Card
+                            name="/proj/{project.slug}"
+                            title="{project.metadata.title}"
+                            sub="{project.metadata.description}"
+                            subLinks="{project.metadata.subLinks}"
+                    >
+                        {project.metadata.summary}
+                    </Card>
+                {/each}
             </div>
         </div>
     </div>

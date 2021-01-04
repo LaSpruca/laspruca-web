@@ -1,30 +1,30 @@
 import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
+import YAML from 'yaml';
+// import type {ProjectPage} from "../_types";
 
-export function getPosts () {
+export function getPosts()/*: ProjectPage[] */ {
     const slugs = fs.readdirSync('projects')
         .filter(file => path.extname(file) === '.md')
         .map(file => file.slice(0, -3));
 
     return slugs.map(getPost).sort((a, b) => {
         // @ts-ignore
-        return a.metadata.pubdate < b.metadata.pubdate ? 1 : -1;
+        return a.metadata.date < b.metadata.date ? 1 : -1;
     });
 }
 
-export function getPost(slug) {
+export function getPost(slug)/*: ProjectPage */{
     const file = `projects/${slug}.md`;
     if (!fs.existsSync(file)) return null;
 
     const markdown = fs.readFileSync(file, 'utf-8');
 
-    const { content, metadata } = process_markdown(markdown);
+    const { html: content, metadata } = process_markdown(markdown);
 
-    // @ts-ignore
-    const date = new Date(`${metadata.pubdate} EDT`); // cheeky hack
-    // @ts-ignore
-    metadata.dateString = date.toDateString();
+    metadata.date = new Date(`${metadata.date}`);
+    metadata.dataString = metadata.date.toDateString();
 
     const html = marked(content);
 
@@ -35,18 +35,11 @@ export function getPost(slug) {
     };
 }
 
-function process_markdown(markdown) {
+function process_markdown(markdown)/*: ProjectPage */ {
     const match = /---\n([\s\S]+?)\n---/.exec(markdown);
     const frontMatter = match[1];
     const content = markdown.slice(match[0].length);
+    const metadata = YAML.parse(frontMatter);
 
-    const metadata = {};
-    frontMatter.split('\n').forEach(pair => {
-        const colonIndex = pair.indexOf(':');
-        metadata[pair.slice(0, colonIndex).trim()] = pair
-            .slice(colonIndex + 1)
-            .trim();
-    });
-
-    return { metadata, content };
+    return { metadata, html: content, slug: "" };
 }
