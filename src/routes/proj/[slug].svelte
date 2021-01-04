@@ -10,7 +10,6 @@
 <script context="module">
   export async function preload({params}) {
     const res = await this.fetch(`/proj/${params.slug}.json`);
-    console.log(res.status);
     const data = await res.json();
     if (res.status === 200) {
       return {post: data};
@@ -37,11 +36,14 @@
     <div class="title-block">
         <h1>{post.metadata.title}</h1>
         <p><small>{post.metadata.dataString}</small></p>
-        {#each post.metadata.subLinks as link}
-            <a href="{link.href}">{link.text}</a>
-        {/each}
+        <div class="links">
+            {#each post.metadata.subLinks as link}
+                <a href="{link.href}">{link.text}</a>
+            {/each}
+        </div>
     </div>
     <div class="body">
         {@html post.html}
     </div>
 </section>
+

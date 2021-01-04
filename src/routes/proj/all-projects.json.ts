@@ -1,7 +1,5 @@
 import { getPosts } from './_posts';
 
-const lookup = new Map();
-
 export function get(req, res) {
     let posts = getPosts();
 

@@ -11,21 +11,8 @@
   // import {ProjectPage} from "./_types.ts";
 
   export async function preload(page, session) {
-    const res = await this.fetch(`proj/all-projects.json`);
+    const res = await this.fetch(`proj/recent.json`);
     const pages/*: ProjectPage */ = await res.json();
-
-    pages.sort((a, b) => {
-      let d1 = new Date(a.metadata.dataString);
-      let d2 = new Date(b.metadata.dataString);
-
-      if (d1 > d2) {
-        return 1;
-      } else if (d1 < d2) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
 
     if (res.status === 200) {
       return {pages};
@@ -51,10 +38,10 @@
             <p>LaSpruca</p>
             <div class="social">
                 <a href="https://github.com/laspruca">
-                    <img src={gh} alt=""/>
+                    <img src={gh} alt="My GitHub"/>
                 </a>
                 <a href="https://www.reddit.com/user/laspruca">
-                    <img src={reddit} alt=""/>
+                    <img src={reddit} alt="My Reddit"/>
                 </a>
             </div>
         </div>
