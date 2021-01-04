@@ -5,6 +5,8 @@ summary: "A snake game with some WASM componets"
 subLinks:
 - href: https://github.com/laspruca/sneeek
   text: GitHub Repo
+- href: https://snake.laspruca.nz
+  text: Snake game  
 date: 2021-04-01
 ---
 This was a small game of snake that I decided to make. I wanted to play around with wasm, so I decided to make a 
