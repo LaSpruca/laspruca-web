@@ -81,23 +81,19 @@
                     </div>
                     <div class="right">
                         <p>
-                            I am a Year 11 student at Whangarie Boys' High School, a swimming
-                            coach for Kamo Amateur Swimming Club, a member of Questionable
-                            Research Labs, and a developer.
+                            I am a Year 11 student at Whangarie Boys' High School, a swimming coach for Kamo Amateur
+                            Swimming Club, a member of Questionable Research Labs, and a developer.
                         </p>
                         <p>
-                            At School, I take Electronics, Digital Technology, Maths, Science,
-                            Economics, and English. I have competed in Science Fair, and have
-                            managed to win awards at the regional competition twice now. At
-                            Questionable, I help many of the younger attendees with their
-                            projects as best I can.
+                            At School, I take Electronics, Digital Technology, Maths, Science, Economics, and English.
+                            I have competed in Science Fair, and have managed to win awards at the regional competition
+                            twice now. At Questionable, I help many of the younger attendees with their projects as best
+                            I can.
                         </p>
                         <p>
-                            As a developer, I mostly use programming languages such as Rust,
-                            which is my preferred atm, TypeScript, Java, C++. My preferred areas
-                            of development are: Native Apps and Backend (NOT in php). I work
-                            with, Flutter, React (using TypeScript), Unity Engine, Linux,
-                            Firebase, GitHub, Actix Web, Spigot and others.
+                            As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My
+                            preferred areas of development are: Native Apps and Backend. I work with, Flutter, React,
+                            Svelte, Sapper, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot and others.
                         </p>
                     </div>
                 </div>
