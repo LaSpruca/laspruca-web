@@ -7,7 +7,7 @@
 </script>
 
 <style lang="scss">
-  @import "../node_modules/assets/style/theme";
+  @import "../node_modules/assets/style/theme.scss";
 
   .error-wrapper {
     filter: drop-shadow(0 0 15px #111);

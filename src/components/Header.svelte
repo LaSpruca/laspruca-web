@@ -3,7 +3,7 @@
 </script>
 
 <style lang="scss">
-  @import "../node_modules/assets/style/theme";
+  @import "../node_modules/assets/style/theme.scss";
 
   .header-wrapper {
     background-color: $primary;
