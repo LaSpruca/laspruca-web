@@ -114,6 +114,7 @@
                     </Card>
                 {/each}
             </div>
+            <a href="/proj">See All</a>
         </div>
     </div>
 </div>
