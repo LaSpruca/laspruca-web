@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from "../../components/Header.svelte";
+
   export let projects: any[];
 </script>
 
@@ -15,9 +16,7 @@
 </script>
 
 <svelte:head>
-    <svelte:head>
-        <title>All Projects | LaSpruca - Semi-Professional Googler</title>
-    </svelte:head>
+    <title>All Projects | LaSpruca - Semi-Professional Googler</title>
 </svelte:head>
 
 <style lang="scss">
