@@ -44,7 +44,10 @@
                     <img src={reddit} alt="My Reddit"/>
                 </a>
             </div>
+            <a href="#e" id="down-arrow">↓</a>
         </div>
+
+        <hr id="e"/>
 
         <div class="about-me-wrap">
             <div class="about-me">
