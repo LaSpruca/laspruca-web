@@ -14,6 +14,12 @@
   }
 </script>
 
+<svelte:head>
+    <svelte:head>
+        <title>All Projects | LaSpruca - Semi-Professional Googler</title>
+    </svelte:head>
+</svelte:head>
+
 <style lang="scss">
   @import "../../node_modules/assets/style/routes/proj/index.scss";
 </style>
