@@ -38,22 +38,22 @@
             <h3>Nathan Hare</h3>
             <p>LaSpruca</p>
             <div class="social">
-                <a href="https://github.com/laspruca">
+                <a href="https://github.com/laspruca" target="_blank">
                     <img src={gh} alt="My GitHub" width="43" height="43" />
                 </a>
-                <a href="https://www.reddit.com/user/laspruca">
+                <a href="https://www.reddit.com/user/laspruca" target="_blank">
                     <img src={reddit} alt="My Reddit" width="43" height="43" />
                 </a>
-                <a href="https://discordapp.com/users/403646951259635713">
+                <a href="https://discordapp.com/users/403646951259635713" target="_blank">
                     <img src={discord} alt="My Discord" width="43" height="43"  />
                 </a>
             </div>
-            <a href="#e" id="down-arrow">↓</a>
+            <a href="#about-me-wrap" id="down-arrow">↓</a>
         </div>
 
         <hr id="e"/>
 
-        <div class="about-me-wrap">
+        <div id="about-me-wrap">
             <div class="about-me">
                 <div class="content">
                     <div class="left">
