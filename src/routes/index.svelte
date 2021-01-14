@@ -3,6 +3,7 @@
   import gh from "assets/image/gh.svg";
   import reddit from "assets/image/reddit.svg";
   import logo from "assets/image/logo.svg";
+  import discord from "assets/image/discord.svg"
 
   export let pages/*: ProjectPage */;
 </script>
@@ -38,10 +39,13 @@
             <p>LaSpruca</p>
             <div class="social">
                 <a href="https://github.com/laspruca">
-                    <img src={gh} alt="My GitHub"/>
+                    <img src={gh} alt="My GitHub" width="43" height="43" />
                 </a>
                 <a href="https://www.reddit.com/user/laspruca">
-                    <img src={reddit} alt="My Reddit"/>
+                    <img src={reddit} alt="My Reddit" width="43" height="43" />
+                </a>
+                <a href="https://discordapp.com/users/403646951259635713">
+                    <img src={discord} alt="My Discord" width="43" height="43"  />
                 </a>
             </div>
             <a href="#e" id="down-arrow">↓</a>
