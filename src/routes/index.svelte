@@ -88,14 +88,13 @@
                     </div>
                     <div class="right">
                         <p>
-                            I am a Year 11 student at Whangarie Boys' High School, a swimming coach for Kamo Amateur
+                            I am a Year 12 student at Whangarie Boys' High School, a swimming coach for Kamo Amateur
                             Swimming Club, a member of Questionable Research Labs, and a developer.
                         </p>
                         <p>
-                            At School, I take Electronics, Digital Technology, Maths, Science, Economics, and English.
-                            I have competed in Science Fair, and have managed to win awards at the regional competition
-                            twice now. At Questionable, I help many of the younger attendees with their projects as best
-                            I can.
+                            At School, I take Electronics, Digital Technology, Maths, Physics and, Cemetery, and Economics.
+                            I have competed in Science Fair, and have won awards at the regional competition twice now.
+                            At Questionable, I help many of the younger attendees with their projects as best can.
                         </p>
                         <p>
                             As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My
