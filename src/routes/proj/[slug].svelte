@@ -5,6 +5,7 @@
   // import {ProjectPage} from "../_types";
 
   export let post/*: ProjectPage */;
+  post.html = post.html.replace(/<a/g, "<a target=\"_blank\"")
 </script>
 
 <script context="module">
