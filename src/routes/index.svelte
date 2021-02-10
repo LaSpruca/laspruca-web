@@ -92,7 +92,7 @@
                             Swimming Club, a member of Questionable Research Labs, and a developer.
                         </p>
                         <p>
-                            At School, I take Electronics, Digital Technology, Maths, Physics and, Cemetery, and Economics.
+                            At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics.
                             I have competed in Science Fair, and have won awards at the regional competition twice now.
                             At Questionable, I help many of the younger attendees with their projects as best can.
                         </p>
