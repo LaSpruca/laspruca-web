@@ -2,7 +2,7 @@
   // import {ProjectPage} from "./_types.ts";
 
   export async function preload(page, session) {
-    const res = await this.fetch(`proj/recent.json`);
+    const res = await this.fetch(`projects/recent.json`);
     const pages /*: ProjectPage */ = await res.json();
 
     if (res.status === 200) {
@@ -110,7 +110,7 @@
       <div class="cards">
         {#each pages as project}
           <Card
-            name="/proj/{project.slug}"
+            name="/projects/{project.slug}"
             title={project.metadata.title}
             sub={project.metadata.description}
             subLinks={project.metadata.subLinks}
@@ -119,7 +119,7 @@
           </Card>
         {/each}
       </div>
-      <a href="/proj">See All</a>
+      <a href="/projects">See All</a>
     </div>
   </div>
 </div>

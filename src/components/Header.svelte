@@ -13,7 +13,7 @@
     </div>
     <nav>
       <a href="/">Home</a>
-      <a href="/proj">All Projects</a>
+      <a href="/projects">All Projects</a>
     </nav>
   </header>
 </div>

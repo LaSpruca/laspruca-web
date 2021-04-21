@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload({ params }) {
-    const res = await this.fetch(`/proj/${params.slug}.json`);
+    const res = await this.fetch(`/projects/${params.slug}.json`);
     const data = await res.json();
     if (res.status === 200) {
       return { post: data };
@@ -46,5 +46,5 @@
 </section>
 
 <style lang="scss">
-  @import "../../assets/style/routes/proj";
+  @import "../../assets/style/routes/projects/index.scss";
 </style>

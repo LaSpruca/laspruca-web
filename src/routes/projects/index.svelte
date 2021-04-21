@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   export async function preload() {
-    const request = await this.fetch("/proj/all-projects.json");
+    const request = await this.fetch("/projects/all-projects.json");
     const projects = await request.json();
 
     return {
@@ -24,7 +24,7 @@
 <div class="content">
   <div class="projects">
     {#each projects as project}
-      <a href="/proj/{project.slug}" class="project-wrapper">
+      <a href="/projects/{project.slug}" class="project-wrapper">
         <div class="project">
           <h1>{project.metadata.title}</h1>
           <h2>{project.metadata.description}</h2>
@@ -35,5 +35,5 @@
 </div>
 
 <style lang="scss">
-  @import "../../assets/style/routes/proj/index.scss";
+  @import "../../assets/style/routes/projects/index.scss";
 </style>
