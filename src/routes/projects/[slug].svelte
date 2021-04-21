@@ -13,9 +13,9 @@
 <!-- Layout for all the projects -->
 <script lang="ts">
   import Header from "../../components/Header.svelte";
-  // import {ProjectPage} from "../_types";
+  import type { ProjectPage } from "../../_types";
 
-  export let post /*: ProjectPage */;
+  export let post: ProjectPage;
   post.html = post.html.replace(/<a/g, '<a target="_blank"');
 </script>
 
@@ -46,5 +46,5 @@
 </section>
 
 <style lang="scss">
-  @import "../../assets/style/routes/projects/index.scss";
+  @import "../../assets/style/routes/projects/[slug].scss";
 </style>

@@ -11,8 +11,9 @@
 
 <script lang="ts">
   import Header from "../../components/Header.svelte";
+  import type { ProjectPage } from "../../_types";
 
-  export let projects: any[];
+  export let projects: ProjectPage[];
 </script>
 
 <svelte:head>

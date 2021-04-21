@@ -4,13 +4,15 @@
 
 <div class="header-wrapper">
   <header>
-    <div class="branding">
-      <img width="50px" height="50px" src={logo} alt="My logo" />
-      <div class="text">
-        <h1>Nathan Hare</h1>
-        <h3>LaSpruca</h3>
+    <a href="/" class="home-link">
+      <div class="branding">
+        <img width="50px" height="50px" src={logo} alt="My logo" />
+        <div class="text">
+          <h1>Nathan Hare</h1>
+          <h3>LaSpruca</h3>
+        </div>
       </div>
-    </div>
+    </a>
     <nav>
       <a href="/">Home</a>
       <a href="/projects">All Projects</a>
@@ -47,6 +49,11 @@
 
   .text {
     padding-left: 1rem;
+  }
+
+  .home-link {
+    text-decoration: none;
+    color: $secondary;
   }
 
   nav {

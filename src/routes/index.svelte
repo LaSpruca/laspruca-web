@@ -1,9 +1,7 @@
 <script context="module" lang="ts">
-  // import {ProjectPage} from "./_types.ts";
-
   export async function preload(page, session) {
     const res = await this.fetch(`projects/recent.json`);
-    const pages /*: ProjectPage */ = await res.json();
+    const pages: ProjectPage[] = await res.json();
 
     if (res.status === 200) {
       return { pages };
