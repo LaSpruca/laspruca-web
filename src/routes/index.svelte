@@ -53,54 +53,57 @@
 
     <hr id="e" />
 
-    <div id="about-me-wrap">
-      <div class="about-me">
-        <div class="content">
-          <div class="left">
-            <h1>Nathan Hare</h1>
-            <h2>Semi-Professional Googler</h2>
-            <ul>
-              <li>
-                <h3>
-                  <span role="img" aria-label="Computer"> 💻 </span>
-                  Software Developer
-                </h3>
-              </li>
-              <li>
-                <h3>
-                  <span role="img" aria-label="Open Book"> 📖 </span>
-                  Student
-                </h3>
-              </li>
-              <li>
-                <h3>
-                  <span role="img" aria-label="New Zealand Flag"> 🇳🇿 </span>
-                  Whangarei, New Zealand
-                </h3>
-              </li>
-            </ul>
-          </div>
-          <div class="right">
-            <p>
-              I am a Year 12 student at Whangarie Boys' High School, a swimming
-              coach for Kamo Amateur Swimming Club, a member of Questionable
-              Research Labs, and a developer.
-            </p>
-            <p>
-              At School, I take Electronics, Digital Technology, Maths, Physics
-              and, Cemetery, and Economics. I have competed in Science Fair, and
-              have won awards at the regional competition twice now. At
-              Questionable, I help many of the younger attendees with their
-              projects as best can.
-            </p>
-            <p>
-              As a developer, I mostly use programming languages such as Rust,
-              TypeScript, Java, C++. My preferred areas of development are:
-              Native Apps and Backend. I work with, Flutter, React, Svelte,
-              Sapper, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot
-              and others.
-            </p>
-          </div>
+        <div id="about-me-wrap">
+            <div class="about-me">
+                <div class="content">
+                    <div class="left">
+                        <h1>Nathan Hare</h1>
+                        <h2>Semi-Professional Googler</h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <span role="img" aria-label="Computer">
+                                      💻
+                                    </span>
+                                    Software Developer
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <span role="img" aria-label="Open Book">
+                                      📖
+                                    </span>
+                                    Student
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <span role="img" aria-label="New Zealand Flag">
+                                      🇳🇿
+                                    </span>
+                                    Whangarei, New Zealand
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <p>
+                            I am a Year 12 student at Whangarie Boys' High School, a swimming coach for Kamo Amateur
+                            Swimming Club, a member of Questionable Research Labs, and a developer.
+                        </p>
+                        <p>
+                            At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics.
+                            I have competed in Science Fair, and have won awards at the regional competition twice now.
+                            At Questionable, I help many of the younger attendees with their projects as best can.
+                        </p>
+                        <p>
+                            As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My
+                            preferred areas of development are: Native Apps and Backend. I work with, Flutter, React,
+                            Svelte, Sapper, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot and others.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>
