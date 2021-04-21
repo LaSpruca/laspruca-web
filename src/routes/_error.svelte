@@ -1,13 +1,29 @@
 <script lang="ts">
-    export let status: number;
-    export let error: Error;
+  export let status: number;
+  export let error: Error;
 
-    // @ts-ignore
-    const dev = process.env.NODE_ENV === 'development';
+  // @ts-ignore
+  const dev = process.env.NODE_ENV === "development";
 </script>
 
+<div class="error-wrapper">
+  <div class="error">
+    <h1>{status}</h1>
+    {#if status === 404}
+      <h3>Page not found</h3>
+      <h6>No I wont make it even if you asks nicely</h6>
+      <h6>
+        Unless I <strong>actually</strong> need it
+      </h6>
+    {:else}
+      <h3>{error.message}</h3>
+    {/if}
+    <a href="/">Home</a>
+  </div>
+</div>
+
 <style lang="scss">
-  @import "../node_modules/assets/style/theme.scss";
+  @import "../assets/style/theme.scss";
 
   .error-wrapper {
     filter: drop-shadow(0 0 15px #111);
@@ -61,21 +77,3 @@
     }
   }
 </style>
-
-<div class="error-wrapper">
-    <div class="error">
-        <h1>{status}</h1>
-        {#if status === 404}
-            <h3>Page not found</h3>
-            <h6>
-                No I wont make it even if you asks nicely
-            </h6>
-            <h6>
-                Unless I <strong>actually</strong> need it
-            </h6>
-        {:else}
-            <h3> {error.message} </h3>
-        {/if}
-        <a href="/">Home</a>
-    </div>
-</div>

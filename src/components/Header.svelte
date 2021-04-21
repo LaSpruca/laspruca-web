@@ -1,14 +1,29 @@
 <script lang="ts">
-    import logo from "assets/image/logo.svg";
+  import logo from "../assets/image/logo.svg";
 </script>
 
+<div class="header-wrapper">
+  <header>
+    <div class="branding">
+      <img width="50px" height="50px" src={logo} alt="My logo" />
+      <div class="text">
+        <h1>Nathan Hare</h1>
+        <h3>LaSpruca</h3>
+      </div>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/proj">All Projects</a>
+    </nav>
+  </header>
+</div>
+
 <style lang="scss">
-  @import "../node_modules/assets/style/theme.scss";
+  @import "../assets/style/theme.scss";
 
   .header-wrapper {
     background-color: $primary;
     box-shadow: 0 5px 10px $primary;
-
   }
 
   header {
@@ -54,13 +69,14 @@
       }
     }
   }
-  
+
   @media only screen and (max-width: 550px) {
     header {
       flex-direction: column;
     }
 
-    .branding, nav {
+    .branding,
+    nav {
       margin: auto;
     }
 
@@ -69,19 +85,3 @@
     }
   }
 </style>
-
-<div class="header-wrapper">
-    <header>
-        <div class="branding">
-            <img width="50px" height="50px" src="{logo}" alt="My logo"/>
-            <div class="text">
-                <h1>Nathan Hare</h1>
-                <h3>LaSpruca</h3>
-            </div>
-        </div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/proj">All Projects</a>
-        </nav>
-    </header>
-</div>

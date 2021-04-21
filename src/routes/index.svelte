@@ -15,10 +15,10 @@
 
 <script lang="ts">
   import Card from "../components/Card.svelte";
-  import gh from "assets/image/gh.svg";
-  import reddit from "assets/image/reddit.svg";
-  import logo from "assets/image/logo.svg";
-  import discord from "assets/image/discord.svg";
+  import gh from "../assets/image/gh.svg";
+  import reddit from "../assets/image/reddit.svg";
+  import logo from "../assets/image/logo.svg";
+  import discord from "../assets/image/discord.svg";
   import type { ProjectPage } from "../_types";
 
   export let pages: ProjectPage[];
@@ -125,5 +125,5 @@
 </div>
 
 <style lang="scss">
-  @import "../node_modules/assets/style/routes/index.scss";
+  @import "../assets/style/routes/index.scss";
 </style>
