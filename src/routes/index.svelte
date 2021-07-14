@@ -58,7 +58,7 @@
 			<p>
 				As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My
 				preferred areas of development are: Native Apps and Backend. I work with, Flutter, React,
-				Svelte, Sapper, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot and others.
+				Svelte, SvelteKit, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot and others.
 			</p>
 		</div>
 	</div>

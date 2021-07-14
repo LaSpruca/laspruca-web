@@ -15,13 +15,13 @@
 
 	.section-content {
 		width: 100%;
-		margin-top: 10rem;
+		margin-top: 3rem;
 		margin-bottom: 30px;
 
 		background: $fluorescent-blue;
 
-		clip-path: polygon(10% 20%, 99% 0, 90% 80%, 1% 100%);
-		padding: 10rem;
+		clip-path: polygon(10% 10%, 99% 0, 90% 90%, 1% 100%);
+		padding: 5rem;
 	}
 
 	@media screen and (max-width: 600px) {
