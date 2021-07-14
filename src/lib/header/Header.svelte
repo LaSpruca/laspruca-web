@@ -1,120 +1,93 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './spruce-logo.svg';
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+	<div class="header-blur">
+		<a href="/" class="logo">
+			<img src={logo} alt="Spruce Logo" />
+			<div class="logo-shadow" />
 		</a>
-	</div>
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
-			<li class:active={$page.path === '/todos'}><a sveltekit:prefetch href="/todos">Todos</a></li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<nav>
+			<a href="/contact"><h2>Contact</h2></a>
+			<a href="/"><h2>Home</h2></a>
+			<a href="/projects"><h2>Projects</h2></a>
+		</nav>
 	</div>
 </header>
 
-<style>
+<style lang="scss">
 	header {
-		display: flex;
-		justify-content: space-between;
+		background-image: url('/assets/img/header-bg.png');
+		background-size: cover;
+		background-position: 0 50%;
 	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.header-blur {
+		padding: 5em;
 		width: 100%;
 		height: 100%;
+		backdrop-filter: blur(5px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& > * {
+			padding: 1rem;
+		}
 	}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+	.logo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		img {
+			object-fit: contain;
+			border-radius: 100%;
+			width: 4rem;
+			height: 4rem;
+			z-index: 5;
+		}
+
+		.logo-shadow {
+			background-color: white;
+			position: absolute;
+			width: 5em;
+			height: 5em;
+			transform: translate(0, -10%);
+			border-radius: 100%;
+		}
 	}
 
 	nav {
+		margin-top: 2rem;
 		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		justify-content: space-between;
+		width: 50%;
+
+		a {
+			color: white;
+			text-decoration: none;
+
+			text-align: center;
+		}
 	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
+	@media only screen and (max-width: 770px) {
+		.header-blur {
+			padding: 3em;
+		}
 
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 1em;
-		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 10%;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--accent-color);
+		nav {
+			margin-top: 0.5rem;
+			flex-direction: column;
+			align-items: center;
+			a {
+				width: auto;
+				margin: 0.25em 0;
+			}
+		}
 	}
 </style>
