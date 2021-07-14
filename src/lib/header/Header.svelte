@@ -91,10 +91,13 @@
 				height: 3px;
 				background-color: transparent;
 				width: 0%;
-				transition: width 0.2s, background-color 0.5s, height 0.3s, margin 0.3s;
+				transition: width 0.3s, transform 0.6s, background-color 0.5s, height 0.15s, margin 0.15s;
 				margin: 0 auto;
-				height: 3px;
-				margin-bottom: 3px;
+				height: 2px;
+				margin: 2px 0;
+				left: 50%;
+				transform: translate(50%, 0);
+				margin-top: 0.25em;
 			}
 
 			&:hover {
@@ -102,6 +105,7 @@
 				.underline {
 					background-color: lightgrey;
 					width: 100%;
+					transform: translate(0%, 0);
 				}
 			}
 
@@ -110,9 +114,25 @@
 				.underline {
 					width: 100%;
 					background-color: white;
-					height: 6px;
+					height: 4px;
 					margin-bottom: 0px;
+					transform: translate(0%, 0);
 				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 770px) {
+		.header-blur {
+			padding: 3em;
+		}
+		nav {
+			margin-top: 0.5rem;
+			flex-direction: column;
+			align-items: center;
+			a {
+				width: auto;
+				margin: 0.25em 0;
 			}
 		}
 	}

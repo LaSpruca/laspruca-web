@@ -1,3 +1,5 @@
+@import '$lib/colors.scss';
+
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -11,4 +13,20 @@ h4,
 h5,
 h6 {
 	font-family: 'Roboto', sans-serif;
+}
+
+main {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $charleston-green;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 30pt;
+	}
 }
