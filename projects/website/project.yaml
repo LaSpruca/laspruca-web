@@ -1,0 +1,9 @@
+title: LaSpruca Web
+description: My Website
+summary: A portfolio website for my self
+subLinks:
+    - href: https://github.com/laspruca/laspruca-web
+      text: GitHub Repo
+    - href: https://laspruca.nz
+      text: Website 
+date: 2021-01-03

@@ -121,8 +121,13 @@
 			}
 		}
 	}
-
 	@media only screen and (max-width: 770px) {
+		nav {
+			width: 80%;
+		}
+	}
+
+	@media only screen and (max-width: 550px) {
 		.header-blur {
 			padding: 3em;
 		}

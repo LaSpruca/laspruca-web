@@ -65,7 +65,7 @@
 </Section>
 
 <style lang="scss">
-	@import '../lib/colors.scss';
+	@import '../lib/colors';
 
 	.content {
 		padding: 3rem;
