@@ -1,14 +1,19 @@
-import { loadAll } from 'js-yaml';
 import type { ProjectMetadata } from './types';
+import { dev } from '$app/env';
 
 let metadata = new Map<string, ProjectMetadata>();
+
+const imports = (() =>
+	dev
+		? import.meta.glob('/static/projects/*/project.json')
+		: import.meta.glob('/projects/*/project.json'))();
 
 async function loadMetas() {
 	if (metadata.size > 0) {
 		return;
 	}
 
-	let paths = Object.keys(import.meta.glob('/static/projects/*/project.json'));
+	let paths = Object.keys(imports);
 	for (let path of paths) {
 		const name = path.split('/')[3];
 
