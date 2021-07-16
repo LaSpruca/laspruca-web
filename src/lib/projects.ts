@@ -6,7 +6,7 @@ let metadata = new Map<string, ProjectMetadata>();
 const imports = (() =>
 	dev
 		? import.meta.glob('/static/projects/*/project.json')
-		: import.meta.glob('/projects/*/project.json'))();
+		: import.meta.glob('./../../../projects/*/project.json'))();
 
 async function loadMetas() {
 	if (metadata.size > 0) {
