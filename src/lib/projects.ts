@@ -1,45 +1,53 @@
-import { readdirSync, readFileSync, existsSync } from 'fs';
 import { loadAll } from 'js-yaml';
-import { DateTime } from 'luxon';
 import type { ProjectMetadata } from './types';
 
-const loadMetadata = (projectName: string) =>
-	parseMetadata({
-		project: projectName,
-		...loadAll(readFileSync(`projects/${projectName}/project.yaml`).toString())
-	});
+let metadata = new Map<string, ProjectMetadata>();
 
-const parseMetadata = (project: any): ProjectMetadata => {
-	return {
-		...project[0],
-		path: project['project']
-	};
-};
+async function loadMetas() {
+	if (metadata.size > 0) {
+		return;
+	}
 
-export async function recentProjects() {
-	try {
-		return {
-			status: 200,
-			body: readdirSync('projects')
-				.map((path) => loadMetadata(path).path)
-				// @ts-ignore
-				.sort((a, b) => b.date - a.date)
-				.slice(0, 6)
-		};
-	} catch (ex) {
-		return {
-			status: 500,
-			body: { error: ex }
-		};
+	let paths = Object.keys(import.meta.glob('/static/projects/*/project.yaml'));
+	for (let path of paths) {
+		const name = path.split('/')[3];
+		const parsed = loadAll((await import(path + '?raw')).default);
+		metadata[name] = {
+			...parsed[0]
+		} as ProjectMetadata;
 	}
 }
 
-export async function getProjectMetadata(projectName: string) {
-	return existsSync(`projects/${projectName}`)
-		? {
-				status: 200,
-				body: JSON.stringify(loadMetadata(projectName)),
-				headers: {}
-		  }
-		: { status: 404, body: { error: 'File not found' }, headers: {} };
-}
+const exists = (projectName) => Object.keys(metadata).includes(projectName);
+
+export const recentProjects = async () => {
+	await loadMetas();
+	return {
+		status: 200,
+		body: JSON.stringify(
+			Object.entries(metadata)
+				.map(([key, value]) => {
+					return { name: key, ...value };
+				})
+				.sort((a, b) => b.date - a.date)
+				.map(({ name }) => name)
+				.slice(0, 6)
+		)
+	};
+};
+
+export const getProjectMetadata = async (projectName) => {
+	await loadMetas();
+
+	if (exists(projectName)) {
+		return {
+			status: 200,
+			body: JSON.stringify(metadata[projectName])
+		};
+	} else {
+		return {
+			status: 404,
+			body: '{"error": "File not found"}'
+		};
+	}
+};

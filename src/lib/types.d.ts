@@ -18,7 +18,6 @@ export interface ProjectMetadata extends DefaultBody {
 	subLinks: SubLinks[];
 	date: DateTime;
 	thumbnail: string;
-	path: string;
 }
 
 export interface SubLinks {
