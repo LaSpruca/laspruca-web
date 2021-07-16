@@ -13,7 +13,6 @@
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
-		"@types/js-yaml": "^4.0.2",
 		"@types/luxon": "^1.27.1",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",
 		"@typescript-eslint/parser": "^4.19.0",
@@ -33,7 +32,6 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.2.2",
 		"@lukeed/uuid": "^2.0.0",
-		"js-yaml": "^4.1.0",
 		"luxon": "^2.0.1"
 	}
 }

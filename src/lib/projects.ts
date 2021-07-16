@@ -8,12 +8,12 @@ async function loadMetas() {
 		return;
 	}
 
-	let paths = Object.keys(import.meta.glob('/static/projects/*/project.yaml'));
+	let paths = Object.keys(import.meta.glob('/static/projects/*/project.json'));
 	for (let path of paths) {
 		const name = path.split('/')[3];
-		const parsed = loadAll((await import(path + '?raw')).default);
+
 		metadata[name] = {
-			...parsed[0]
+			...(await import(path))
 		} as ProjectMetadata;
 	}
 }

@@ -1,0 +1,13 @@
+{
+  "title": "The Big Send",
+  "description": "A bulk SMS messenger",
+  "summary": "An application to send out a text message a large number of phone numbers",
+  "subLinks": [
+    {
+      "href": "https://github.com/laspruca/thebigsend",
+      "text": "GitHub Repo"
+    }
+  ],
+  "date": "2021-01-04",
+  "thumbnail": "Logo.png"
+}

@@ -1,7 +1,0 @@
-title: WBHS Notices
-description: E-Notices for WBHS
-summary: "Displaying the school notices digital at my school, with an automatic refresh and less paper waste"
-subLinks:
-- href: https://github.com/laspruca/wbhs_notices
-  text: GitHub Repo
-date: 2021-01-28
