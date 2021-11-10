@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { showHeader } from './stores';
 	import spruceLogo from './assets/image/spruce-logo.svg';
-
-	$: console.log($showHeader);
 </script>
 
 <header class="header" class:hidden={!$showHeader}>
@@ -13,7 +11,10 @@
 			<h2>LaSpruca</h2>
 		</div>
 	</div>
-	<nav class="header__nav" />
+	<nav class="header__nav">
+		<a href="/">Home</a>
+		<a href="/projects">All Projects</a>
+	</nav>
 </header>
 
 <style lang="scss">
@@ -49,6 +50,17 @@
 		}
 
 		&__nav {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
 		}
 
 		&.hidden {

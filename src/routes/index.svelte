@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { showHeader } from '$lib/stores';
-	import { bind } from 'svelte/internal';
 
-	let vh: number = 0;
-	let y: number = 0;
+	let windowInnerHeight: number = 0;
+	let scrollVirt: number = 0;
+
 	$: {
-		if (y > vh) {
+		if (scrollVirt > windowInnerHeight) {
 			$showHeader = true;
 		} else {
 			$showHeader = false;
@@ -13,7 +13,7 @@
 	}
 </script>
 
-<svelte:window bind:scrollY={y} bind:innerHeight={vh} />
+<svelte:window bind:scrollY={scrollVirt} bind:innerHeight={windowInnerHeight} />
 
 <div class="title">
 	<div class="title__text--wrapper">
@@ -34,9 +34,26 @@
 	</svg>
 	<div class="title__sprucebg" />
 </div>
-
-<div class="kontent">
-	<p>Ahh yesh this is some quality <strong>K O N T E N T</strong></p>
+<div class="main-content">
+	<div class="about-me">
+		<div class="about-me__title">
+			<h1>Hi I'm Nathan</h1>
+		</div>
+		<div class="about-me__text">
+			<p>
+				I'm a year 12 student at Whangarei Boys' High School, a coatch at Kamo Amature Swimming
+				Club, and a member of <a href="https://questionable.org.nz">Questionable Research Labs</a>.
+				I am doing Digial Technologies, Chemistry, Electronics, Physics, Maths, and Economics at
+				school.
+			</p>
+			<p>
+				I'm into SvelteJS and SvelteKit for web design, and NestJS or Actix Web on the backend. When
+				it comes to mobile apps, I use Flutter, or native android. I also have some experence in
+				Unity and Unreal Engine as well. I primarly code in TypeScript and Rust, but can code in
+				Python, JS, Dart, Java, and C# as well, and maybe C++ if pushed.
+			</p>
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
@@ -44,15 +61,18 @@
 		display: flex;
 		flex-grow: 1;
 		width: 100vw;
-		height: 100vh;
+		height: 135vh;
 		max-width: 100%;
+		border-bottom-left-radius: 25%;
+		border-bottom-right-radius: 25%;
+		overflow: hidden;
 
 		&__sprucebg {
 			background: url('/assets/img/header-bg.webp') center;
 			background-size: cover;
 			background-position-x: 40%;
 			width: auto;
-			height: 100vh;
+			height: 100%;
 			flex: 1;
 		}
 
@@ -77,7 +97,7 @@
 			&--wrapper {
 				background-color: white;
 				width: 40vw;
-				height: 100vh;
+				height: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -90,15 +110,24 @@
 		position: absolute;
 		left: 40vw;
 		top: 0;
-		height: 100vh;
+		height: 125vh;
 
 		path {
 			fill: #ffffff;
 		}
 	}
 
-	.kontent {
-		width: 100%;
-		height: 101vh;
+	.main-contnet {
+		padding-top: 5rem;
+	}
+
+	.about-me {
+		padding: 1rem;
+		margin: 3rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		&__title {
+			padding: 3rem;
+		}
 	}
 </style>
