@@ -1,7 +1,7 @@
 import type { Project } from '$lib/types';
 
 export const loadProjects = async (): Promise<Project[]> => {
-	return await Promise.all(
+	return (await Promise.all(
 		Object.entries(import.meta.glob('./*.md')).map(async ([path, page]) => {
 			// Get the metadata of the page
 			const metadata = await page();
@@ -10,10 +10,10 @@ export const loadProjects = async (): Promise<Project[]> => {
 			// Return an object containg the information
 			return { ...metadata['metadata'], date: new Date(metadata['metadata']['date']), slug };
 		})
-	);
+	)).sort(({ date: dA }, { date: dB }) =>
+		dA > dB ? 1 : (dA < dB) ? -1 : 0)
 };
 
 export const loadSixRecentProjects = async (): Promise<Project[]> => {
-	return (await loadProjects()).sort(({ date: dA }, { date: dB }) =>
-		dA > dB ? -1 : (dA < dB) ? 1 : 0).slice(0,6);
+	return (await loadProjects()).reverse().slice(0,6);
 };

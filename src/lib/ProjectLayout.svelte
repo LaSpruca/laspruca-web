@@ -15,22 +15,28 @@
 </div>
 
 <style>
-  .project-info {
-    padding: 2rem
-  }
+    .project-info {
+        padding: 2rem
+    }
 
-  .content {
-    width: 70%;
-    margin: auto;
-  }
+    .content {
+        width: 70%;
+        margin: auto;
+    }
 
-  .content :global(h1),
-	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(h5),
-	.content :global(h6) {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
+    .content :global(h1),
+    .content :global(h2),
+    .content :global(h3),
+    .content :global(h4),
+    .content :global(h5),
+    .content :global(h6) {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .content :global(img) {
+				width: 100%;
+        max-width: 70vw;
+        margin: auto
+    }
 </style>
