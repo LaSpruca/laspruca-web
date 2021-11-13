@@ -88,7 +88,7 @@
 			background-size: cover;
 			background-position-x: 40%;
 			width: auto;
-			height: 100vh;
+			height: 100%;
 			flex: 1;
 		}
 
@@ -113,7 +113,7 @@
 			&--wrapper {
 				background-color: white;
 				width: 40vw;
-				height: 100vh;
+				height: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -162,6 +162,16 @@
 			img {
         width: 2rem;
 			}
+		}
+	}
+
+	.about-me {
+		padding: 1rem;
+		margin: 3rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		&__title {
+			padding: 3rem;
 		}
 	}
 </style>
