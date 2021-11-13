@@ -1,3 +1,10 @@
+---
+title: "WBHS Notices"
+description: "E-Notices for WBHS"
+gitRepo: "https://github.com/laspruca/wbhs_notices"
+date: "2021-01-28"
+---
+
 # Why
 
 A while ago, one of my teachers suggested that I make a way of displaying the school notices around school, without

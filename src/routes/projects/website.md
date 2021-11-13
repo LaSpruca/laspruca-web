@@ -1,3 +1,11 @@
+---
+title: "LaSpruca Web"
+description: "A portfolio website for my self"
+date: "2021-01-03"
+gitRepo: "https://github.com/laspruca/laspruca-web"
+website: "https://laspruca.nz"
+---
+
 # Framework
 At the moment, I am currently using sapper, with svelte. Originally I had been using React and Create React App
 to make the website. I had quite enjoyed using React and Create React App, until I wanted to have a page for

@@ -1,3 +1,10 @@
+---
+title: "TCPlugin"
+description: "Technocraft Server Plugin"
+gitRepo: "https://github.com/questionable-research-labs/tcplugin"
+date: "2021-01-04"
+---
+
 This was a plugin I have made to use on the techocraft server (mc.qrl.nz if you are interested). I made it because we
 had some random, fun, and some utility functions for us to use on the server
 
