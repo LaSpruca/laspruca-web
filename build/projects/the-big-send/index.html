@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-fe527d41.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-2d7e6306.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-1f031e2a.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-54162c23.js">
+		<link rel="modulepreload" href="/./_app/pages/projects/the-big-send.md-3eaf2cc9.js">
+		<link rel="modulepreload" href="/./_app/chunks/ProjectLayout-17db31d6.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-d5c6c1ae.css">
+		<link rel="stylesheet" href="/./_app/assets/ProjectLayout-6702c6fd.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-fe527d41.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-1f031e2a.js"),
+						import("/./_app/pages/projects/the-big-send.md-3eaf2cc9.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/projects/the-big-send",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header class="header svelte-30hi3g hidden"><div class="header__spruce-logo svelte-30hi3g"><img class=" svelte-30hi3g" src="/_app/assets/spruce-logo.eddc4ddd.svg" alt="">
+<div class="header__spruce-logo-name"><h1 class="svelte-30hi3g">Nathan Hare</h1>
+	<h2 class="svelte-30hi3g">LaSpruca</h2></div></div>
+	<nav class="header__nav svelte-30hi3g"><a href="/" class="svelte-30hi3g">Home</a>
+<a href="/projects" class="svelte-30hi3g">All Projects</a></nav>
+</header>
+<main class="svelte-1lsqtdn"><div class="project-info svelte-1leqzmx"><h1>The Big Send</h1>
+	<h2>A bulk SMS messenger</h2>
+	<h3>2021-01-04</h3></div>
+
+<div class="content svelte-1leqzmx"><p>This was my science fair entry for 2020 Central Northland Science Fair, a science fair for high school students in
+New Zealand. I got the idea after an employee of the Northland DHB asked for an application of this type, the other
+alternatives were either really expensive or posed security flaws. To solve this, I worked on making, originally, an
+Android app, currently working on flutter re-write, that could send out many text messages quickly.</p>
+<h1>How it works</h1>
+<p>The app allows the user to choose a .csv file from their phone to use as a list. This can include optional merge data,
+and is saved locally on the phone, but can be deleted. A message then could be specified and sent to all the people in
+this list.</p>
+<h1>Current Status</h1>
+<p>The current working version is the original android version, the flutter version is still in development. The current
+working version does not support merges, while the flutter one does not even load lists at the moment.</p>
+</div>
+</main>
+
+
+
+	
+</div>
+	</body>
+</html>

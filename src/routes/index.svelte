@@ -1,68 +1,85 @@
-<script lang="ts" context="module">
+<script lang='ts' context='module'>
 	import type { Load } from '@sveltejs/kit';
 
 	export const prerender = true;
-	export const load: Load = async ({fetch}) => {
+	export const load: Load = async ({ fetch }) => {
 		return {
 			props: {
-				projects: await fetch('/projects/recent-projects.json')
+				projects: (await (await fetch('/projects/recent-projects.json')).json()).map(k => {
+					return {
+						...k,
+						date: new Date(k.date)
+					};
+				})
 			}
-		}
-	}
+		};
+	};
 </script>
 
-<script lang="ts">
-	import { showHeader } from '$lib/stores';
-	import discordLogo from "$lib/assets/image/discord.svg";
-	import emailLogo from "$lib/assets/image/email.svg";
-	import ghLogo from "$lib/assets/image/gh.svg";
-	import reddit from "$lib/assets/image/reddit.svg";
+<script lang='ts'>
+	import { removeHeadderSpacing, showHeader } from '$lib/stores';
+	import discordLogo from '$lib/assets/image/discord.svg';
+	import emailLogo from '$lib/assets/image/email.svg';
+	import ghLogo from '$lib/assets/image/gh.svg';
+	import reddit from '$lib/assets/image/reddit.svg';
 	import type { Project } from '$lib/types';
+	import { onDestroy, onMount } from 'svelte';
 
 	export let projects: Project[];
-
-	console.log(projects)
 
 	let vh: number = 0;
 	let scrollY: number = 0;
 
 	$: $showHeader = scrollY > vh;
-	$: borderRadius =  Math.min(scrollY, 300)+ "px";
+	$: borderRadius = (Math.min(scrollY, vh) / vh) * 20 + 'em';
+
+	onMount(() => {
+		$removeHeadderSpacing = true;
+	});
+
+	onDestroy(() => {
+		$removeHeadderSpacing = false;
+	});
 </script>
 
 <svelte:window bind:scrollY={scrollY} bind:innerHeight={vh} />
 
-<div style='border-bottom-left-radius: {borderRadius}; border-bottom-right-radius: {borderRadius}' class="title">
-	<div class="title__text--wrapper">
-		<div class="title__text">
+<div style='border-bottom-left-radius: {borderRadius}; border-bottom-right-radius: {borderRadius}' class='title'>
+	<div class='title__text--wrapper'>
+		<div class='title__text'>
 			<h1>Nathan Hare</h1>
 			<h2>LaSpruca</h2>
-			<div class="title__text__list">
+			<div class='title__text__list'>
 				<p>Software Developer</p>
 				<p>High School Student</p>
 				<p>Got no clue what I am doing</p>
 			</div>
 		</div>
 	</div>
-	<svg viewBox="0 0 281.09 1440" xmlns="http://www.w3.org/2000/svg" id="header-wave">
+	<svg viewBox='0 0 281.09 1440' xmlns='http://www.w3.org/2000/svg' id='header-wave'>
 		<path
-			d="m256 0 5.3 30c5.7 30 15.7 90 0 150-16.3 60-58.3 120-58.6 180 0.3 60 42.3 120 64 180 21.3 60 21.3 120-16 180-37.7 60-111.7 120-117.4 180-5.3 60 58.7 120 53.4 180-5.7 60-79.7 120-117.4 180-37.3 60-37.3 120-37.3 150v30h-32v-30-150-180-180-180-180-180-180-150-30z"
+			d='m256 0 5.3 30c5.7 30 15.7 90 0 150-16.3 60-58.3 120-58.6 180 0.3 60 42.3 120 64 180 21.3 60 21.3 120-16 180-37.7 60-111.7 120-117.4 180-5.3 60 58.7 120 53.4 180-5.7 60-79.7 120-117.4 180-37.3 60-37.3 120-37.3 150v30h-32v-30-150-180-180-180-180-180-180-150-30z'
 		/>
 	</svg>
-	<div class="title__sprucebg"></div>
+	<div class='title__sprucebg'></div>
 </div>
 
-<div class="about-me">
-	<div class="about-me__title">
-		<h1>Hi i'm Nathan</h1>
+<div class='about-me'>
+	<div class='about-me__title'>
+		<h1>Hi I'm Nathan</h1>
 	</div>
 
-	<div class="about-me__main-content">
-		<p>I am a Year 12 student at Whangarei Boys' High School, a swimming coach for Kamo Amateur Swimming Club, a member of Questionable Research Labs, and a developer.</p>
+	<div class='about-me__main-content'>
+		<p>I am a Year 12 student at Whangarei Boys' High School, a swimming coach for Kamo Amateur Swimming Club, a member
+			of Questionable Research Labs, and a developer.</p>
 
-		<p>At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics. I have competed in Science Fair, and have won awards at the regional competition twice now. At Questionable, I help many of the younger attendees with their projects as best can.</p>
+		<p>At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics. I have competed
+			in Science Fair, and have won awards at the regional competition twice now. At Questionable, I help many of the
+			younger attendees with their projects as best can.</p>
 
-		<p>As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My preferred areas of development are: Native Apps and Backend. I work with, Flutter, React, Svelte, Sapper, Unity Engine, Linux, Firebase, GitHub, Actix Web, Spigot and others.</p>
+		<p>As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My preferred areas of
+			development are: Native Apps and Backend. I work with, Flutter, React, Svelte, Sapper, Unity Engine, Linux,
+			Firebase, GitHub, Actix Web, Spigot and others.</p>
 	</div>
 
 	<div class='about-me__socials'>
@@ -73,105 +90,212 @@
 	</div>
 </div>
 
-<style lang="scss">
-	.title {
-		display: flex;
-		flex-grow: 1;
-		width: 100vw;
-		height: 100vh;
-		max-width: 100%;
-		overflow: hidden;
-		transition: border-radius 10ms ease-in-out;
+<div class='recent-projects'>
+	<div class='recent-projects__title'>
+		<h1>Recent Projects</h1>
+	</div>
 
-		&__sprucebg {
-			background: url('/assets/img/header-bg.webp') center;
-			background-size: cover;
-			background-position-x: 40%;
-			width: auto;
-			height: 100%;
-			flex: 1;
-		}
+	<div class='recent-projects__projects'>
+		{#each projects as project}
+			<a href={'/projects/' + project.slug} class='recent-projects__projects__card'>
+				<div>
+					<h1>{project.title}</h1>
 
-		&__text {
-			text-align: center;
+					<div class='recent-projects__projects__card__links'>
+						{#if project.gitRepo}
+							<a href={project.gitRepo}>Project Repository</a>
+						{/if}
 
-			&__list {
-				display: flex;
-				text-align: center;
-				justify-content: center;
-				align-items: center;
-				padding: 2rem;
-				p {
-					padding: 1rem;
-					width: 33.3%;
-					& + p {
-						border-left: 3px solid black;
-					}
-				}
-			}
+						{#if project.website}
+							<a href={project.website}>Project Website</a>
+						{/if}
+					</div>
 
-			&--wrapper {
-				background-color: white;
-				width: 40vw;
-				height: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-end;
-			}
-		}
-	}
+					<p>{project.description}</p>
+				</div>
+			</a>
+		{/each}
+	</div>
 
-	#header-wave {
-		position: absolute;
-		left: 40vw;
-		top: 0;
-		height: 100vh;
+	<a href='/projects' class='recent-projects__see-all'>See All</a>
+</div>
 
-		path {
-			fill: #ffffff;
-		}
-	}
+<style lang='scss'>
+  .title {
+    display: flex;
+    flex-grow: 1;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+    transition: border-radius 10ms ease-in-out;
 
-	.about-me {
-		padding: 5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		&__title h1 {
-			font-weight: bolder;
-			text-shadow: 5px 5px 0 cyan ;
-		}
+    &__sprucebg {
+      background: url('/assets/img/header-bg.webp') center;
+      background-size: cover;
+      background-position-x: 40%;
+      width: auto;
+      height: 100%;
+      flex: 1;
+    }
 
-		&__main-content {
-			text-align: center;
+    &__text {
+      text-align: center;
+
+      &__list {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        p {
+          padding: 1rem;
+          width: 33.3%;
+
+          & + p {
+            border-left: 3px solid black;
+          }
+        }
+      }
+
+      &--wrapper {
+        background-color: white;
+        width: 40vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  #header-wave {
+    position: absolute;
+    left: 40vw;
+    top: 0;
+    height: 100vh;
+
+    path {
+      fill: #ffffff;
+    }
+  }
+
+  .about-me {
+    padding: 10rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title h1 {
+      font-weight: bolder;
+      text-shadow: 5px 5px 0 cyan;
+    }
+
+    &__main-content {
+      text-align: center;
       width: 60%;
 
       p {
-				padding: 1rem 0;
-				text-space: 1rem;
-			}
-		}
+        padding: 1rem 0;
+        text-space: 1rem;
+      }
+    }
 
-		&__socials  {
-			padding: 1rem 0;
-			display: flex;
-			gap: 2rem;
-			justify-content: center;
-			img {
+    &__socials {
+      padding: 1rem 0;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+
+      img {
         width: 2rem;
-			}
-		}
-	}
+      }
+    }
+  }
 
-	.about-me {
-		padding: 1rem;
-		margin: 3rem;
-		border-radius: 1rem;
-		overflow: hidden;
-		&__title {
-			padding: 3rem;
+  .about-me {
+    padding: 1rem;
+    margin: 3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &__title {
+      padding: 3rem;
+    }
+  }
+
+  .recent-projects {
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+    align-items: center;
+		gap: 5rem;
+		flex-direction: column;
+    &__projects {
+			width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+			flex-shrink: 3;
+      justify-content: center;
+      align-items: start;
+      text-align: center;
+      gap: 2rem;
+
+			a {
+				transition: transform 100ms ease-in-out;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+
+      &__card {
+        text-decoration: none;
+				width: 10rem;
+				height: 100%;
+				div {
+					height: 100%;
+				}
+
+        * {
+          color: initial;
+        }
+
+        h1 {
+          font-size: 18pt;
+        }
+
+        &__links {
+					padding: 10px;
+					display: flex;
+					flex-direction: column;
+					gap: 0.5rem;
+
+					a {
+						font-size: 8pt;
+						font-weight: bold;
+						text-decoration: none;
+            background-color: lightgrey;
+						padding: 5px;
+						border-radius: 5px;
+					}
+        }
+      }
+    }
+
+		&__see-all {
+			padding: 1rem;
+			background-color: lightgrey;
+			color: black;
+			transition: transform 100ms ease;
+			text-decoration: none;
+			font-weight: bold;
+
+			&:hover {
+				transform: scale(1.1);
+      }
 		}
-	}
+  }
 </style>

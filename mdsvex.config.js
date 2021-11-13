@@ -1,3 +1,4 @@
+/** @type{import("mdsvex").MdsvexOptions} */
 const config = {
 	extensions: ['.svelte.md', '.md', '.svx'],
 
@@ -6,7 +7,8 @@ const config = {
 	},
 
 	remarkPlugins: [],
-	rehypePlugins: []
+	rehypePlugins: [],
+	layout: './src/lib/ProjectLayout.svelte'
 };
 
 export default config;

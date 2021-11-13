@@ -1,7 +1,7 @@
 export interface Project {
 	slug: string;
-	name: string;
-	date: string;
+	title: string;
+	date: Date;
 	description: string;
 	gitRepo?: string;
 	website?: string;

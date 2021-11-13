@@ -5,6 +5,10 @@ gitRepo: "https://github.com/laspruca/wbhs_notices"
 date: "2021-01-28"
 ---
 
+<script>
+    import demo from "./wbhs-notices/demo.webp";
+</script>
+
 # Why
 
 A while ago, one of my teachers suggested that I make a way of displaying the school notices around school, without
@@ -31,4 +35,4 @@ application, using my currently favourite framework, sapper. I had to make two p
 the notices, and a client side route to show the notices. On the client side, I also had to make it so that the device
 could be left alone and still update. After some experimenting, I have this version to show:
 
-[![Preview Video](/projects/wbhs_notices/demo.webp)](https://drive.google.com/file/d/1MlaPtpZPDbG9GDfQl8oWR-fwscvHPqvo/view)
+[![Preview Video]({demo})](https://drive.google.com/file/d/1MlaPtpZPDbG9GDfQl8oWR-fwscvHPqvo/view)
