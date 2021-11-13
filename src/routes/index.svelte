@@ -44,6 +44,10 @@
 
 <svelte:window bind:scrollY={scrollY} bind:innerHeight={vh} />
 
+<svelte:head>
+	<title>Home | LaSpruca</title>
+</svelte:head>
+
 <div style='border-bottom-left-radius: {borderRadius}; border-bottom-right-radius: {borderRadius}' class='title'>
 	<div class='title__text--wrapper'>
 		<div class='title__text'>

@@ -4,6 +4,10 @@
 	export let date;
 </script>
 
+<svelte:head>
+	<title>{title} | LaSpruca</title>
+</svelte:head>
+
 <div class='project-info'>
 	<h1>{title}</h1>
 	<h2>{description}</h2>

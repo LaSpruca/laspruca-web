@@ -16,6 +16,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>All Projects | LaSpruca</title>
+</svelte:head>
+
 <script lang='ts'>
 	import type { Project } from '$lib/types';
 
