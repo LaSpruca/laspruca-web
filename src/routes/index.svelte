@@ -79,7 +79,7 @@
 
 		<p>At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics. I have competed
 			in Science Fair, and have won awards at the regional competition twice now. At Questionable, I help many of the
-			younger attendees with their projects as best can.</p>
+			younger attendees with their projects as best as I can.</p>
 
 		<p>As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My preferred areas of
 			development are: Native Apps and Backend. I work with, Flutter, React, Svelte, Sapper, Unity Engine, Linux,
