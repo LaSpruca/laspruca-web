@@ -1,5 +1,6 @@
 <script lang="ts">
     import SpruceLogo from '$lib/components/graphics/SpruceLogo.svelte';
+    import Spacer from "../lib/components/Spacer.svelte";
 
     let randomText = "Yeet!";
 
@@ -23,6 +24,37 @@
         <div class="s"></div>
         <p>{randomText}</p>
     </div>
+</div>
+
+<Spacer/>
+
+<div class="section">
+    <h1>Who am I</h1>
+    <h4>I am a Year 13 student at Whangārei Boys' High School, a member of QRL, and a developer.</h4>
+    <p>
+        I was born and raised in Whangārei, New Zealand. I found my love for IT in my second year of school. From then
+        on I have always tinkered with computers, with my tinkering getting more serious as I got further on through
+        school.
+    </p>
+    <p>
+        During intermediate (about 11-12 years old), I started messing around with web development, with my
+        skill continuing to grow from there. Through high school, I have competed in several competition, from
+        mathematical modeling to a terrible ideas hackathon. As I come to the end of high school, I look to go to
+        university to complete a bachelor of engineering, majoring in software engineering.
+    </p>
+</div>
+
+<Spacer/>
+
+<div class="section">
+    <h1>What do I do?</h1>
+    <h4>I'm a software developer</h4>
+    <p>
+        Of cause, I have my preferences and specialties. While I can make a website, I'm more into the backend, away
+        from the CSS. I also like to participate in hackathons with my friends. These can range from competitions about
+        cyber security to a competition "what is the worst idea you can come up with?". I always enjoy a challenge, and
+        these competition provide many.
+    </p>
 </div>
 
 <style lang="scss">
@@ -103,6 +135,32 @@
   }
 
   .section {
+    padding: 10% 5%;
+    background-color: var(--color-darker);
+    border-radius: 10px;
+
+    h1 {
+      padding-bottom: 1rem;
+    }
+
+    h4 {
+      padding-bottom: 0.8rem;
+    }
+
+    p {
+      padding-bottom: 0.55rem;
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+
+    text-align: center;
+
+    p {
+      font-size: 1rem;
+    }
+  }
 
   @media only screen and (min-width: 540px) {
     .top {
