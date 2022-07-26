@@ -8,7 +8,7 @@
 <div class="top">
     <div class="me">
         <div class="logo">
-            <SpruceLogo animate size="300"/>
+            <SpruceLogo animate size="100"/>
         </div>
         <div class="name">
             <h1>Nathan Hare</h1>
@@ -60,37 +60,43 @@
       display: flex;
       align-items: center;
       font-size: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
       color: #ddd;
 
       .s {
         margin: 0 1rem;
         border: white 1px solid;
-        height: 50%;
+        width: 50%;
       }
 
       * {
-        transform: translateY(-150%);
         opacity: 0;
-        animation: pop-up util.$fill-after ease-in forwards;
+        animation: slide-in util.$fill-after ease-in forwards;
 
         &:nth-child(1) {
           animation-delay: util.$time + (util.$fill-after);
+          transform: translateX(50%);
         }
 
         &:nth-child(2) {
           animation-delay: util.$time + (util.$fill-after * 1.5);
+          transform: translateX(50%);
         }
 
         &:nth-child(3) {
           animation-delay: util.$time + (util.$fill-after * 2);
+          transform: translateX(-50%);
         }
 
         &:nth-child(4) {
           animation-delay: util.$time + (util.$fill-after * 2.5);
+          transform: translateX(-50%);
         }
 
         &:nth-child(5) {
           animation-delay: util.$time + (util.$fill-after * 3);
+          transform: translateX(50%);
         }
       }
     }
@@ -98,6 +104,23 @@
 
   .section {
 
+  @media only screen and (min-width: 540px) {
+    .top {
+      .tagline {
+        flex-direction: row;
+        gap: 0;
+
+        .s {
+          width: 0;
+          height: 50%;
+        }
+
+        * {
+          transform: translateY(0) !important;
+          animation: pop-up util.$fill-after ease-in forwards;
+        }
+      }
+    }
   }
 
   @keyframes appare {
@@ -108,15 +131,26 @@
 
   @keyframes box {
     to {
-      background-color: #0f0e17;
+      background-color: var(--color-darker);
       box-shadow: 0 0 10px #000000;
     }
   }
 
   @keyframes pop-up {
+    from {
+      transform: translateY(50%);
+    }
+
     to {
       opacity: 100%;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in {
+    to {
+      opacity: 100%;
+      transform: translateX(0);
     }
   }
 </style>

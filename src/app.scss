@@ -1,5 +1,12 @@
 @use "sass:math";
 
+:root {
+  --color: #1f1e33;
+  --color-darker: #0f0e17;
+  --text: #eee;
+  ---text-darker: #ddd;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -7,7 +14,7 @@
 }
 
 body {
-  background-color: #1f1e33;
+  background-color: var(--color);
 }
 
 h1,
