@@ -1,17 +1,24 @@
-@use "sass:math";
-@use "lib/util";
+@use 'sass:math';
+@use 'lib/util';
 
 :root {
+	// Save the colors as CSS variables so that I can access them in the mdsvex template
+	--color: util.$color;
+	--color-semi-dark: util.$color-semi-dark;
+	--color-darker: util.$color-darker;
+
+	--text: util.$text;
+	--text-darker: util.$text-darker;
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  background-color: util.$color;
+	background-color: util.$color;
 }
 
 h1,
@@ -20,23 +27,23 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 main {
-  padding: 10vh #{math.div(100 - 75, 2)}vw;
-  color: util.$text;
+	padding: 10vh #{math.div(100 - 75, 2)}vw;
+	color: util.$text;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-align: center;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-align: center;
+	}
 
-  h1 {
-    font-size: 30pt;
-  }
+	h1 {
+		font-size: 30pt;
+	}
 }
