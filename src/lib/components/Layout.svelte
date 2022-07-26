@@ -1,3 +1,8 @@
-<!-- The layout for the markdown file that will be presented -->
 <script lang="ts">
+    export let title: string;
+    export let date: string;
 </script>
+
+<h1>{ title }</h1>
+<p class="date">Written: { date }</p>
+<slot></slot>

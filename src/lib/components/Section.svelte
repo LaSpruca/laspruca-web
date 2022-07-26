@@ -2,9 +2,13 @@
 <script lang="ts">
     let className = "";
     export {className as class};
+
+    export let spacer = true;
 </script>
 
-<div class="s"></div>
+{#if spacer}
+    <div class="s"></div>
+{/if}
 
 <div class={"section" + className}>
     <h1>

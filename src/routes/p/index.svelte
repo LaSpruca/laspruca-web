@@ -5,7 +5,7 @@
     export const load: Load = async ({fetch}) => {
         return {
             props: {
-                projects: (await (await fetch('/projects/projects.json')).json()).map(k => {
+                projects: (await (await fetch('/p/projects.json')).json()).map(k => {
                     return {
                         ...k,
                         date: new Date(k.date)
@@ -22,110 +22,61 @@
 
 <script lang='ts'>
     import type {Project} from '$lib/types';
+    import Section from "../../lib/components/Section.svelte";
+    import ProjectCard from "../../lib/components/ProjectCard.svelte";
 
     export let projects: Project[];
 </script>
 
-<div class='projects'>
-    <div class='projects__title'>
-        <h1>All Projects</h1>
-    </div>
-    <div class='projects__projects'>
+<div class="projects">
+    <Section spacer={false}>
+        <span slot="title">Wanna see older stuff</span>
+        <span slot="subtitle">Here is all of the projects I written about!</span>
+    </Section>
+    <a href="/">Return Home</a>
+    <div class="cards">
         {#each projects as project}
-            <a href={'/projects/' + project.slug} class='projects__projects__card'>
-                <div>
-                    <h1>{project.title}</h1>
-
-                    <a class='projects__projects__card__links'>
-                        {#if project.gitRepo}
-                            <a href={project.gitRepo}>Project Repository</a>
-                        {/if}
-
-                        {#if project.website}
-                            <a href={project.website}>Project Website</a>
-                        {/if}
-                    </a>
-
-                    <p>{project.description}</p>
-                </div>
-            </a>
+            <ProjectCard {project}/>
         {/each}
     </div>
 </div>
 
+
 <style lang='scss'>
-  .projects {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    flex-direction: column;
+  @use "../../lib/util";
 
-    &__projects {
-      width: 80%;
-      display: flex;
-      flex-wrap: wrap;
-      flex-shrink: 3;
-      justify-content: center;
-      align-items: start;
-      text-align: center;
-      gap: 2rem;
-
-      a {
-        transition: transform 100ms ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-
-      &__card {
-        text-decoration: none;
-        width: 10rem;
-        height: 100%;
-
-        div {
-          height: 100%;
-        }
-
-        * {
-          color: initial;
-        }
-
-        h1 {
-          font-size: 18pt;
-        }
-
-        &__links {
-          padding: 10px;
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          a {
-            font-size: 8pt;
-            font-weight: bold;
-            text-decoration: none;
-            background-color: lightgrey;
-            padding: 5px;
-            border-radius: 5px;
-          }
-        }
-      }
+  @media only screen and (min-width: #{util.$desktop}) {
+    .cards {
+      grid-template-columns: 50% 50%;
     }
+  }
 
-    &__see-all {
-      padding: 1rem;
-      background-color: lightgrey;
-      color: black;
-      transition: transform 100ms ease;
-      text-decoration: none;
-      font-weight: bold;
+  .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-      &:hover {
-        transform: scale(1.1);
-      }
+  .cards {
+    display: grid;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    background-color: util.$color-darker;
+    color: util.$text;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      background-color: util.$color-semi-dark;
     }
   }
 </style>
