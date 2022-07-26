@@ -1,10 +1,12 @@
 <!-- Component for each of the text sections that you see on the front-page -->
 <script lang="ts">
+    let className = "";
+    export {className as class};
 </script>
 
 <div class="s"></div>
 
-<div class="section">
+<div class={"section" + className}>
     <h1>
         <slot name="title"></slot>
     </h1>
@@ -17,13 +19,15 @@
 </div>
 
 <style lang="scss">
+  @use "../util";
+
   .s {
     padding-bottom: 10vh;
   }
 
   .section {
     padding: 10% 5%;
-    background-color: var(--color-darker);
+    background-color: util.$color-darker;
     border-radius: 10px;
     text-align: center;
   }

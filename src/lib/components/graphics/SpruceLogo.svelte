@@ -1,9 +1,11 @@
 <script lang="ts">
     export let animate = false;
-    export let size = 500;
+    let className = "";
+
+    export {className as class};
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width={size} height={size} class:animate>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class={className} class:animate>
     <rect class="bg" width="1024" height="1024"/>
     <path
             class="outline"
@@ -36,7 +38,7 @@
     fill: #ed1c24;
 
     .animate & {
-      animation: linear util.$time show-color;
+      animation: linear util.$animation-duration show-color;
     }
   }
 
@@ -75,20 +77,20 @@
     stroke-miterlimit: 10;
 
     .animate & {
-      animation: linear #{util.$time * 0.75} outline-stroke forwards, linear util.$time show-color;
+      animation: linear util.$outline-duration outline-stroke forwards, linear util.$animation-duration show-color;
     }
   }
 
   @keyframes outline-stroke {
     to {
       stroke-dashoffset: 0;
-      stroke: #231f20;
+      stroke: util.$color-darker;
     }
   }
 
   @keyframes show-color {
     0%,
-    #{util.$fill-time} {
+    #{util.$percent-outline-duration} {
       fill-opacity: 0;
     }
     100% {
