@@ -1,0 +1,38 @@
+@use "sass:math";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #1f1e33;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  padding: 10vh #{math.div(100 - 75, 2)}vw;
+  color: white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 30pt;
+  }
+}

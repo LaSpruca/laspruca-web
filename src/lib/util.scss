@@ -1,0 +1,6 @@
+@use "sass:math";
+
+$time: 1s;
+$fill-time: 80%;
+$fill-len: math.div($fill-time, 100%) * $time;
+$fill-after: $time - $fill-len;

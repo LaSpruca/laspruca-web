@@ -1,5 +1,6 @@
-/** @type{import("mdsvex").MdsvexOptions} */
-const config = {
+import { defineMDSveXConfig as defineConfig } from 'mdsvex';
+
+const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 
 	smartypants: {
@@ -7,8 +8,7 @@ const config = {
 	},
 
 	remarkPlugins: [],
-	rehypePlugins: [],
-	layout: './src/lib/ProjectLayout.svelte'
-};
+	rehypePlugins: []
+});
 
 export default config;
