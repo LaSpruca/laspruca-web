@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
+/build
 /.svelte-kit
 /package
-yarn-error.log
-.vercel
-.idea
-build
+.env
+.env.*
+!.env.example

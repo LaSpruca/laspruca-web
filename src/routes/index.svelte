@@ -1,305 +1,222 @@
-<script lang='ts' context='module'>
-	import type { Load } from '@sveltejs/kit';
+<script lang="ts" context="module">
+    import type {LoadOutput, LoadEvent} from '@sveltejs/kit';
 
-	export const prerender = true;
-	export const load: Load = async ({ fetch }) => {
-		return {
-			props: {
-				projects: (await (await fetch('/projects/recent-projects.json')).json()).map(k => {
-					return {
-						...k,
-						date: new Date(k.date)
-					};
-				})
-			}
-		};
-	};
+    // Load of the recent projects
+    export async function load({fetch}: LoadEvent): Promise<LoadOutput> {
+        let projectsRequest = await fetch('/p/recent-projects.json');
+        let projects = await projectsRequest.json();
+
+        return {
+            props: {
+                projects
+            }
+        };
+    }
 </script>
 
-<script lang='ts'>
-	import { removeHeadderSpacing, showHeader } from '$lib/stores';
-	import discordLogo from '$lib/assets/image/discord.svg';
-	import emailLogo from '$lib/assets/image/email.svg';
-	import ghLogo from '$lib/assets/image/gh.svg';
-	import reddit from '$lib/assets/image/reddit.svg';
-	import type { Project } from '$lib/types';
-	import { onDestroy, onMount } from 'svelte';
 
-	export let projects: Project[];
+<script lang="ts">
+    import Section from '../lib/components/Section.svelte';
+    import type {Project} from '../lib/types/project';
+    import ProjectCard from '../lib/components/ProjectCard.svelte';
+    import TopSection from '../lib/components/TopSection.svelte';
+    import RustLogo from "../lib/components/graphics/RustLogo.svelte";
+    import GitHubLogo from "../lib/components/graphics/GitHubLogo.svelte";
+    import DiscordLogo from "../lib/components/graphics/DiscordLogo.svelte";
+    import EmailLogo from "../lib/components/graphics/EmailLogo.svelte";
 
-	let vh: number = 0;
-	let scrollY: number = 0;
-
-	$: $showHeader = scrollY > vh;
-	$: borderRadius = (Math.min(scrollY, vh) / vh) * 20 + 'em';
-
-	onMount(() => {
-		$removeHeadderSpacing = true;
-	});
-
-	onDestroy(() => {
-		$removeHeadderSpacing = false;
-	});
+    export let projects: Project[];
 </script>
-
-<svelte:window bind:scrollY={scrollY} bind:innerHeight={vh} />
 
 <svelte:head>
-	<title>Home | LaSpruca</title>
+    <title>LaSpruca</title>
+    <meta name="description" content="All-rounder developer">
 </svelte:head>
 
-<div style='border-bottom-left-radius: {borderRadius}; border-bottom-right-radius: {borderRadius}' class='title'>
-	<div class='title__text--wrapper'>
-		<div class='title__text'>
-			<h1>Nathan Hare</h1>
-			<h2>LaSpruca</h2>
-			<div class='title__text__list'>
-				<p>Software Developer</p>
-				<p>High School Student</p>
-				<p>Got no clue what I am doing</p>
-			</div>
-		</div>
-	</div>
-	<svg viewBox='0 0 281.09 1440' xmlns='http://www.w3.org/2000/svg' id='header-wave'>
-		<path
-			d='m256 0 5.3 30c5.7 30 15.7 90 0 150-16.3 60-58.3 120-58.6 180 0.3 60 42.3 120 64 180 21.3 60 21.3 120-16 180-37.7 60-111.7 120-117.4 180-5.3 60 58.7 120 53.4 180-5.7 60-79.7 120-117.4 180-37.3 60-37.3 120-37.3 150v30h-32v-30-150-180-180-180-180-180-180-150-30z'
-		/>
-	</svg>
-	<div class='title__sprucebg'></div>
+<TopSection/>
+
+<Section>
+    <span slot="title">Who am I</span>
+    <span slot="subtitle"
+    >I am a Year 13 student at Whangārei Boys' High School, a member of QRL, and a developer.</span
+    >
+
+    <p>
+        I was born and raised in Whangārei, New Zealand. I found my love for IT in my second year of
+        school. From then on I have always tinkered with computers, with my tinkering getting more
+        serious as I got further on through school.
+    </p>
+    <p>
+        During intermediate (about 11-12 years old), I started messing around with web development, with
+        my skill continuing to grow from there. Through high school, I have competed in several
+        competition, from mathematical modeling to a terrible ideas hackathon. As I come to the end of
+        high school, I look to go to university to complete a bachelor of engineering, majoring in
+        software engineering.
+    </p>
+</Section>
+
+<Section>
+    <span slot="title">What do I do?</span>
+    <span slot="subtitle">I'm a software developer</span>
+    <p>
+        Of cause, I have my preferences and specialties. While I can make a website, I'm more into the
+        backend, away from the CSS. I also like to participate in hackathons with my friends. These can
+        range from competitions about cyber security to a competition "what is the worst idea you can
+        come up with?". I always enjoy a challenge, and these competition provide many.
+    </p>
+</Section>
+
+<Section>
+    <span slot="title">What do I code in</span>
+    <span slot="subtitle">Yes.</span>
+    <p>
+        I can program in many languages from C# and .NET, to Java, C/C++, Python, JavaScript. Sometimes if I'm feeling
+        especially funkey, I might do some Haskel.
+    </p>
+    <p>
+        While I can code in many languages, I have my specialties and favourites, if it's systems or backend, you'll
+        find me coding in the Rust programming language most of the time. If I'm in the browser on the frontend, I'll
+        gravitate towards Scss and TypeScript.
+    </p>
+    <svelte:fragment slot="images">
+        <RustLogo/>
+        <img src="/ts-logo.png" alt="TypeScript logo"/>
+        <img src="/sass-logo.png" alt="Sass Logo">
+    </svelte:fragment>
+</Section>
+
+<Section>
+    <span slot="title">What do I use</span>
+    <span slot="subtitle">Many things</span>
+    <p>
+        When it comes to frontend frameworks, I can use React and NextJS, although I'm by no means an expert, my skills
+        like with Svelte and SvelteKit. When I get a rush of blood to the head, I might try some <em>exotic</em>
+        WebAssembly via Rust and the Yew framework. I have also had a bit of experience with Blazor.
+    </p>
+
+    <p>
+        I've had expierence with many a different frameworks on the backend. Of cause, I have experience with NodeJS and
+        Deno, using frameworks like Express although I have found Nest.JS to be quite nice, although, I haven't sunk
+        <em>that</em> much time into either, instead, I tend to reach for rust frameworks. I have used many of the
+        popular backend frameworks for rust. My favourite so far is Warp, but I have previously used both Actix Web and
+        Rocket.
+    </p>
+
+    <svelte:fragment slot="images">
+        <img src="/nodejs.png" alt="NodeJS Logo">
+        <img src="/nest-logo.svg" alt="NestJS Logo">
+        <img src="/actix-logo.png" alt="Actix Logo">
+        <img src="/rocket-logo.png" alt="Rocket Logo">
+    </svelte:fragment>
+</Section>
+
+<div class="projects">
+    <Section>
+        <span slot="title">What have I been upto?</span>
+        <span slot="subtitle">Here are some of my recent projects</span>
+    </Section>
+    <div class="s"></div>
+    <div class="cards">
+        {#each projects as project}
+            <ProjectCard {project}/>
+        {/each}
+    </div>
+    <div class="s"></div>
+    <a href="/p">See more projects</a>
 </div>
 
-<div class='about-me'>
-	<div class='about-me__title'>
-		<h1>Hi I'm Nathan</h1>
-	</div>
+<Section>
+    <span slot="title">Wanna talk</span>
+    <span slot="subtitle">Reach out to me on any of the following</span>
+    <div class="contact-links">
+        <a href="https://github.com/LaSpruca">
+            <GitHubLogo/>
+            LaSpruca
+        </a>
 
-	<div class='about-me__main-content'>
-		<p>I am a Year 12 student at Whangarei Boys' High School, a swimming coach for Kamo Amateur Swimming Club, a member
-			of Questionable Research Labs, and a developer.</p>
+        <a href="https://discord.com/user/403646951259635713">
+            <DiscordLogo/>
+            LaSpruca#5194
+        </a>
 
-		<p>At School, I take Electronics, Digital Technology, Maths, Physics and, Chemistry, and Economics. I have competed
-			in Science Fair, and have won awards at the regional competition twice now. At Questionable, I help many of the
-			younger attendees with their projects as best as I can.</p>
+        <a href="mailto:contact@laspruca.nz">
+            <EmailLogo/>
+            contact@laspruca.nz
+        </a>
+    </div>
+</Section>
 
-		<p>As a developer, I mostly use programming languages such as Rust, TypeScript, Java, C++. My preferred areas of
-			development are: Native Apps and Backend. I work with, Flutter, React, Svelte, Sapper, Unity Engine, Linux,
-			Firebase, GitHub, Actix Web, Spigot and others.</p>
-	</div>
 
-	<div class='about-me__socials'>
-		<a href='https://reddit.com/u/laspruca'><img src={reddit} alt='Reddit logo'></a>
-		<a href='https://github.com/laspruca'><img src={ghLogo} alt='Github logo'></a>
-		<a href='https://discord.com/users/403646951259635713'><img src={discordLogo} alt='Discord Logo'></a>
-		<a href='mailto:me@laspruca.nz'><img src={emailLogo} alt='Email logo'></a>
-	</div>
-</div>
+<style lang="scss">
+  @use 'sass:math';
+  @use '../lib/util';
 
-<div class='recent-projects'>
-	<div class='recent-projects__title'>
-		<h1>Recent Projects</h1>
-	</div>
-
-	<div class='recent-projects__projects'>
-		{#each projects as project}
-			<a href={'/projects/' + project.slug} class='recent-projects__projects__card'>
-				<div>
-					<h1>{project.title}</h1>
-
-					<div class='recent-projects__projects__card__links'>
-						{#if project.gitRepo}
-							<a href={project.gitRepo}>Project Repository</a>
-						{/if}
-
-						{#if project.website}
-							<a href={project.website}>Project Website</a>
-						{/if}
-					</div>
-
-					<p>{project.description}</p>
-				</div>
-			</a>
-		{/each}
-	</div>
-
-	<a href='/projects' class='recent-projects__see-all'>See All</a>
-</div>
-
-<style lang='scss'>
-  .title {
+  .projects {
     display: flex;
-    flex-grow: 1;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    overflow: hidden;
-    transition: border-radius 10ms ease-in-out;
-
-    &__sprucebg {
-      background: url('/assets/img/header-bg.webp') center;
-      background-size: cover;
-      background-position-x: 40%;
-      width: auto;
-      height: 100%;
-      flex: 1;
-    }
-
-    &__text {
-      text-align: center;
-
-      &__list {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-
-        p {
-          padding: 1rem;
-          width: 33.3%;
-
-          & + p {
-            border-left: 3px solid black;
-          }
-        }
-      }
-
-      &--wrapper {
-        background-color: white;
-        width: 40vw;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-      }
-    }
-  }
-
-  #header-wave {
-    position: absolute;
-    left: 40vw;
-    top: 0;
-    height: 100vh;
-
-    path {
-      fill: #ffffff;
-    }
-  }
-
-  .about-me {
-    padding: 10rem 5rem 5rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
-    &__title h1 {
-      font-weight: bolder;
-      text-shadow: 5px 5px 0 cyan;
+    .s {
+      height: 5vh;
     }
 
-    &__main-content {
+    a {
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      background-color: util.$color-darker;
+      color: util.$text;
+      font-size: 1.25rem;
+      font-weight: bold;
       text-align: center;
-      width: 60%;
+      padding: 1rem;
 
-      p {
-        padding: 1rem 0;
-        text-space: 1rem;
-      }
-    }
-
-    &__socials {
-      padding: 1rem 0;
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-
-      img {
-        width: 2rem;
+      &:hover {
+        transform: translateY(-0.5rem);
+        background-color: util.$color-semi-dark;
       }
     }
   }
 
-  .about-me {
-    padding: 1rem;
-    margin: 3rem;
-    border-radius: 1rem;
-    overflow: hidden;
-
-    &__title {
-      padding: 3rem;
-    }
+  .cards {
+    display: grid;
+    gap: 1rem;
   }
 
-  .recent-projects {
-		padding: 1rem 0;
-		display: flex;
-		justify-content: center;
+  .contact-links {
+    display: flex;
     align-items: center;
-		gap: 5rem;
-		flex-direction: column;
-    &__projects {
-			width: 80%;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+
+    a {
+      height: 100%;
+      text-decoration: none;
+      color: util.$text-darker;
+      gap: 1rem;
       display: flex;
-      flex-wrap: wrap;
-			flex-shrink: 3;
+      align-items: center;
       justify-content: center;
-      align-items: start;
-      text-align: center;
-      gap: 2rem;
+      padding: 1rem;
+      background-color: util.$color-semi-dark;
+      transition: all 0.2s ease-in-out;
 
-			a {
-				transition: transform 100ms ease-in-out;
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
+      &:hover {
+        background-color: util.$color;
+      }
 
-      &__card {
-        text-decoration: none;
-				width: 10rem;
-				height: 100%;
-				div {
-					height: 100%;
-				}
-
-        * {
-          color: initial;
-        }
-
-        h1 {
-          font-size: 18pt;
-        }
-
-        &__links {
-					padding: 10px;
-					display: flex;
-					flex-direction: column;
-					gap: 0.5rem;
-
-					a {
-						font-size: 8pt;
-						font-weight: bold;
-						text-decoration: none;
-            background-color: lightgrey;
-						padding: 5px;
-						border-radius: 5px;
-					}
-        }
+      :global(*:first-child) {
+        width: 1.5rem;
+        height: auto;
       }
     }
+  }
 
-		&__see-all {
-			padding: 1rem;
-			background-color: lightgrey;
-			color: black;
-			transition: transform 100ms ease;
-			text-decoration: none;
-			font-weight: bold;
-
-			&:hover {
-				transform: scale(1.1);
-      }
-		}
+  @media only screen and (min-width: #{util.$desktop}) {
+    .cards {
+      grid-template-columns: 50% 50%;
+    }
   }
 </style>
