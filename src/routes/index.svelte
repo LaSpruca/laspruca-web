@@ -14,6 +14,7 @@
     }
 </script>
 
+
 <script lang="ts">
     import Section from '../lib/components/Section.svelte';
     import type {Project} from '../lib/types/project';
@@ -29,6 +30,7 @@
 
 <svelte:head>
     <title>LaSpruca</title>
+    <meta name="description" content="All-rounder developer">
 </svelte:head>
 
 <TopSection/>

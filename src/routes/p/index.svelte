@@ -27,6 +27,7 @@
 
 <svelte:head>
     <title>All Projects | LaSpruca</title>
+    <meta name="description" content="A collection of projects that I have done">
 </svelte:head>
 
 <div class="projects">
