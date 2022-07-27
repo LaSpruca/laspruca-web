@@ -1,5 +1,7 @@
 <!-- Component for each of the text sections that you see on the front-page -->
 <script lang="ts">
+    import {SvelteComponent} from "svelte";
+
     let className = "";
     export {className as class};
 
@@ -14,11 +16,15 @@
     <h1>
         <slot name="title"></slot>
     </h1>
-    <h4>
+    <h2>
         <slot name="subtitle"></slot>
-    </h4>
+    </h2>
     <div class="content">
         <slot></slot>
+    </div>
+
+    <div class="images">
+        <slot name="images"></slot>
     </div>
 </div>
 
@@ -40,7 +46,7 @@
     padding-bottom: 1rem;
   }
 
-  h4 {
+  h2 {
     padding-bottom: 0.8rem;
   }
 
@@ -52,6 +58,20 @@
       &:last-child {
         padding: 0;
       }
+    }
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    gap: 1rem;
+
+    :global(img), :global(svg) {
+      width: 5rem;
+      height: auto;
     }
   }
 </style>
