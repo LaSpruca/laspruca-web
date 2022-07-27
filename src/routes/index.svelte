@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
-	import type { LoadOutput } from '@sveltejs/kit';
+	import type { LoadOutput, LoadEvent } from '@sveltejs/kit';
 
 	// Load of the recent projects
-	export async function load({ fetch }): Promise<LoadOutput> {
+	export async function load({ fetch }: LoadEvent): Promise<LoadOutput> {
 		let projectsRequest = await fetch('/p/recent-projects.json');
 		let projects = await projectsRequest.json();
 
@@ -22,6 +22,10 @@
 
 	export let projects: Project[];
 </script>
+
+<svelte:head>
+	<title>LaSpruca</title>
+</svelte:head>
 
 <TopSection />
 
