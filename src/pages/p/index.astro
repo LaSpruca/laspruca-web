@@ -1,0 +1,82 @@
+---
+import ProjectCard from "../../components/ProjectCard.astro";
+import Section from "../../components/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const projects = await Astro.glob("./*.md");
+const odd = projects.length % 2 == 1;
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>All Projects | LaSpruca</title>
+    <meta
+      name="description"
+      content="A collection of projects that I have done"
+    />
+  </Fragment>
+
+  <div class="projects">
+    <Section spacer={false}>
+      <span slot="title">Wanna see older stuff</span>
+      <span slot="subtitle">Here is all of the projects I written about!</span>
+    </Section>
+    <a href="/">Return Home</a>
+    <div class={"cards" + (odd ? " odd" : "")}>
+      {
+        projects.map(({ frontmatter, url }) => {
+          return (
+            <ProjectCard
+              date={frontmatter.date}
+              slug={url ?? ""}
+              title={frontmatter.title}
+              description={frontmatter.description}
+              gitRepo={frontmatter.gitRepo}
+              website={frontmatter.website}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  @use "../../styles/util";
+
+  @media only screen and (min-width: #{util.$desktop}) {
+    .cards {
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    background-color: util.$color-darker;
+    color: util.$text;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      background-color: util.$color-semi-dark;
+    }
+  }
+</style>
