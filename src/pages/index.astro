@@ -2,17 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import TopSection from "../components/TopSection.astro";
-import github from "../graphics/github.png";
-import discord from "../graphics/discord.svg";
-import nodejs from "../graphics/nodejs.png";
-import svelte from "../graphics/svelte.png";
-import actix from "../graphics/actix.png";
-import rocket from "../graphics/rocket.svg";
-import rust from "../graphics/rust.svg";
-import typescript from "../graphics/typescript.png";
-import sass from "../graphics/sass.png";
-import email from "../graphics/email.svg";
+import github from "../assets/graphics/github.png";
+import discord from "../assets/graphics/discord.svg";
+import nodejs from "../assets/graphics/nodejs.png";
+import svelte from "../assets/graphics/svelte.png";
+import actix from "../assets/graphics/actix.png";
+import rocket from "../assets/graphics/rocket.svg";
+import rust from "../assets/graphics/rust.svg";
+import typescript from "../assets/graphics/typescript.png";
+import sass from "../assets/graphics/sass.png";
+import email from "../assets/graphics/email.svg";
 import ProjectCard from "../components/ProjectCard.astro";
+import { Image } from "@astrojs/image/components";
 
 const projects = (await Astro.glob("./p/*.md"))
   .sort((a, b) => a.frontmatter.date - b.frontmatter.date)
@@ -79,8 +80,14 @@ const projects = (await Astro.glob("./p/*.md"))
     </p>
     <Fragment slot="images">
       <img src={rust} alt="Rust Logo" />
-      <img src={typescript} alt="TypeScript Logo" />
-      <img src={sass} alt="Sass Logo" />
+      <Image
+        src={typescript}
+        format="avif"
+        alt="TypeScript Logo"
+        height="80"
+        width="80"
+      />
+      <Image format="avif" src={sass} alt="Sass Logo" height="80" width="80" />
     </Fragment>
   </Section>
 
@@ -105,9 +112,27 @@ const projects = (await Astro.glob("./p/*.md"))
     </p>
 
     <Fragment slot="images">
-      <img src={nodejs} alt="NodeJS Logo" />
-      <img src={svelte} alt="Svelte Logo" />
-      <img src={actix} alt="Actix Logo" />
+      <Image
+        format="avif"
+        src={nodejs}
+        alt="NodeJS Logo"
+        height="80"
+        width="130.73"
+      />
+      <Image
+        format="avif"
+        src={svelte}
+        alt="Svelte Logo"
+        height="80"
+        width="66.48"
+      />
+      <Image
+        format="avif"
+        src={actix}
+        alt="Actix Logo"
+        height="80"
+        width="80"
+      />
       <img src={rocket} alt="Rocket Logo" />
     </Fragment>
   </Section>
@@ -143,7 +168,13 @@ const projects = (await Astro.glob("./p/*.md"))
     <span slot="subtitle">Reach out to me on any of the following</span>
     <div class="contact-links">
       <a href="https://github.com/LaSpruca">
-        <img src={github} alt="GitHub" />
+        <Image
+          format="avif"
+          src={github}
+          alt="GitHub"
+          width="24"
+          height="23.44"
+        />
         LaSpruca
       </a>
 
@@ -153,7 +184,7 @@ const projects = (await Astro.glob("./p/*.md"))
       </a>
 
       <a href="mailto:contact@laspruca.nz">
-        <img src={email} alt="email" />
+        <img src={email} alt="Email" />
         contact@laspruca.nz
       </a>
     </div>

@@ -1,4 +1,7 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,7 +10,5 @@ export default defineConfig({
   },
   output: "static",
   site: "https://laspruca.nz",
-  build: {
-    format: "file",
-  },
+  integrations: [sitemap(), image({})],
 });
