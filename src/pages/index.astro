@@ -16,8 +16,13 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { Image } from "@astrojs/image/components";
 
 const projects = (await Astro.glob("./p/*.md"))
-  .sort((a, b) => a.frontmatter.date - b.frontmatter.date)
+  .sort(
+    (a, b) =>
+      new Date(a.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+  )
   .slice(0, 6);
+console.log(projects);
 ---
 
 <Layout>
@@ -79,15 +84,15 @@ const projects = (await Astro.glob("./p/*.md"))
       gravitate towards Scss and TypeScript.
     </p>
     <Fragment slot="images">
-      <img src={rust} alt="Rust Logo" />
+      <img src={rust} alt="Rust Logo" width="80" height="80" />
       <Image
         src={typescript}
-        format="avif"
+        format="webp"
         alt="TypeScript Logo"
         height="80"
         width="80"
       />
-      <Image format="avif" src={sass} alt="Sass Logo" height="80" width="80" />
+      <Image format="webp" src={sass} alt="Sass Logo" height="80" width="80" />
     </Fragment>
   </Section>
 
@@ -113,27 +118,27 @@ const projects = (await Astro.glob("./p/*.md"))
 
     <Fragment slot="images">
       <Image
-        format="avif"
+        format="webp"
         src={nodejs}
         alt="NodeJS Logo"
         height="80"
         width="130.73"
       />
       <Image
-        format="avif"
+        format="webp"
         src={svelte}
         alt="Svelte Logo"
         height="80"
         width="66.48"
       />
       <Image
-        format="avif"
+        format="webp"
         src={actix}
         alt="Actix Logo"
         height="80"
         width="80"
       />
-      <img src={rocket} alt="Rocket Logo" />
+      <img src={rocket} alt="Rocket Logo" width="238.64" height="80" />
     </Fragment>
   </Section>
 
@@ -169,7 +174,7 @@ const projects = (await Astro.glob("./p/*.md"))
     <div class="contact-links">
       <a href="https://github.com/LaSpruca">
         <Image
-          format="avif"
+          format="webp"
           src={github}
           alt="GitHub"
           width="24"
@@ -179,12 +184,12 @@ const projects = (await Astro.glob("./p/*.md"))
       </a>
 
       <a href="https://discord.com/user/403646951259635713">
-        <img src={discord} alt="Discord" />
+        <img src={discord} alt="Discord" width="24" height="18.58" />
         LaSpruca#5194
       </a>
 
       <a href="mailto:contact@laspruca.nz">
-        <img src={email} alt="Email" />
+        <img src={email} alt="Email" width="24" height="24" />
         contact@laspruca.nz
       </a>
     </div>

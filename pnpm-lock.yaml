@@ -4,12 +4,18 @@ specifiers:
   '@astrojs/image': ^0.9.0
   '@astrojs/sitemap': ^1.0.0
   astro: ^1.4.2
+  http-cache-semantics: ^4.1.0
+  image-size: ^1.0.2
+  mime: ^3.0.0
   sass: ^1.55.0
 
 dependencies:
   '@astrojs/image': 0.9.1
   '@astrojs/sitemap': 1.0.0
-  astro: 1.4.2_sass@1.55.0
+  astro: 1.4.4_sass@1.55.0
+  http-cache-semantics: 4.1.0
+  image-size: 1.0.2
+  mime: 3.0.0
 
 devDependencies:
   sass: 1.55.0
@@ -720,8 +726,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /astro/1.4.2_sass@1.55.0:
-    resolution: {integrity: sha512-v6GxDQoy8edDEJHopPeQg3TY9ghiJhx/n5mWpXdczPIvft3av6GhDn9yNnEKn6u0vHG9eX0sQxNCwXDlZMExAw==}
+  /astro/1.4.4_sass@1.55.0:
+    resolution: {integrity: sha512-vxuHJ8C/3/NDau6EDUvi83JFDBK5Ylmo6VGAsUkdnutpGw77I4NoapoN56ANmU54ucYiu+x0apEPQvesY6GZiQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -843,7 +849,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001414
-      electron-to-chromium: 1.4.270
+      electron-to-chromium: 1.4.271
       node-releases: 2.0.6
       update-browserslist-db: 1.0.9_browserslist@4.21.4
     dev: false
@@ -1069,8 +1075,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
 
-  /electron-to-chromium/1.4.270:
-    resolution: {integrity: sha512-KNhIzgLiJmDDC444dj9vEOpZEgsV96ult9Iff98Vanumn+ShJHd5se8aX6KeVxdc0YQeqdrezBZv89rleDbvSg==}
+  /electron-to-chromium/1.4.271:
+    resolution: {integrity: sha512-BCPBtK07xR1/uY2HFDtl3wK2De66AW4MSiPlLrnPNxKC/Qhccxd59W73654S3y6Rb/k3hmuGJOBnhjfoutetXA==}
     dev: false
 
   /emmet/2.3.6:

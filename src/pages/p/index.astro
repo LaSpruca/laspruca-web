@@ -3,7 +3,17 @@ import ProjectCard from "../../components/ProjectCard.astro";
 import Section from "../../components/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const projects = await Astro.glob("./*.md");
+const projects = (await Astro.glob("./*.md")).sort((a, b) => {
+  return Math.min(
+    Math.max(
+      new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime(),
+      -1
+    ),
+    1
+  );
+});
+
 const odd = projects.length % 2 == 1;
 ---
 
