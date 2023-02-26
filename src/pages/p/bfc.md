@@ -6,6 +6,7 @@ website: "https://crates.io/crates/bf-compile"
 gitRepo: "https://github.com/laspruca/bfc"
 date: "2021-05-21"
 ---
+
 This was a small project that I decided to do for the hell of it. I have made many BF interperters, but never a BF
 compiler, so I thought why not.
 Originally I targeted C intermediate language, but after many bugs, I switch to C++ then finally Rust. The application

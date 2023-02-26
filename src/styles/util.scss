@@ -4,8 +4,10 @@
 $animation-duration: 1s;
 $percent-outline-duration: 80%;
 // I find that if the outline finishes animating 5% earlier, it looks nicer
-$outline-duration: math.div($percent-outline-duration - 5%, 100%) * $animation-duration;
-$fill-duration: math.div(100% - $percent-outline-duration, 100%) * $animation-duration;
+$outline-duration: math.div($percent-outline-duration - 5%, 100%) *
+  $animation-duration;
+$fill-duration: math.div(100% - $percent-outline-duration, 100%) *
+  $animation-duration;
 
 // Main color of the website
 $color: #1f1e33;
@@ -15,7 +17,6 @@ $color-darker: #{darken($color, 8)};
 // Color of the text
 $text: #eee;
 $text-darker: #{darken($text, 8)};
-
 
 // The minimum width for something to be considered to be on a bigger screen
 $desktop: 540px;

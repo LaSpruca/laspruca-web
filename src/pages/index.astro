@@ -3,26 +3,25 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import TopSection from "../components/TopSection.astro";
 import github from "../assets/graphics/github.png";
-import discord from "../assets/graphics/discord.svg";
+import discord from "../assets/graphics/discord.svg?url";
 import nodejs from "../assets/graphics/nodejs.png";
 import svelte from "../assets/graphics/svelte.png";
 import actix from "../assets/graphics/actix.png";
-import rocket from "../assets/graphics/rocket.svg";
-import rust from "../assets/graphics/rust.svg";
+import rocket from "../assets/graphics/rocket.svg?url";
+import rust from "../assets/graphics/rust.svg?url";
 import typescript from "../assets/graphics/typescript.png";
 import sass from "../assets/graphics/sass.png";
-import email from "../assets/graphics/email.svg";
+import email from "../assets/graphics/email.svg?url";
 import ProjectCard from "../components/ProjectCard.astro";
 import { Image } from "@astrojs/image/components";
 
 const projects = (await Astro.glob("./p/*.md"))
   .sort(
     (a, b) =>
-      new Date(a.frontmatter.date).getTime() -
+      new Date(b.frontmatter.date).getTime() -
       new Date(a.frontmatter.date).getTime()
   )
   .slice(0, 6);
-console.log(projects);
 ---
 
 <Layout>

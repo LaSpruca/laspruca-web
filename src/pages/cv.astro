@@ -1,0 +1,219 @@
+---
+import SpruceLogo from "../components/SpruceLogo.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import me from "../assets/graphics/me.jpg";
+---
+
+<Layout footer={false}>
+  <div class="container">
+    <div class="me">
+      <div class="image-wrapper">
+        <Image
+          src={me}
+          format="webp"
+          alt="An image of me"
+          height={200}
+          width={200}
+        />
+        <SpruceLogo />
+      </div>
+
+      <h1>Nathan Hare</h1>
+      <p class="second-text">
+        First Year Engineering <br />
+        University of Auckland
+      </p>
+
+      <h2>Contact Me</h2>
+      <div class="contacts">
+        <p><span>Email:</span>contact@laspruca.nz</p>
+        <p><span>Phone:</span>+64 021 089 33441</p>
+        <p>
+          <span>Address:</span><br />
+          Nathan Hare <br />
+          442 1028 <br />
+          Waipārūrū Hall <br />
+          35 Whitaker Place, Grafton <br />
+          Auckland, 1010 <br />
+        </p>
+      </div>
+    </div>
+    <div class="education">
+      <h2>Education</h2>
+      <ul>
+        <li>NCEA Level 1 - Excelence Endorsement</li>
+        <li>NCEA Level 2 - Excelence Endorsement</li>
+        <li>NCEA Level 3 - Excelence Endorsement</li>
+      </ul>
+    </div>
+    <div class="professional">
+      <h2>Professional Employment</h2>
+      <ul>
+        <li>N3T - Web Developer (Full stack)</li>
+        <li>NAFF - Web Developer (Full Stack)</li>
+      </ul>
+    </div>
+    <div class="community">
+      <h2>Community Involvement</h2>
+      <ul>
+        <li>Kamo Amature Swimming Club Coach</li>
+        <li>Questionable Research Labs</li>
+        <li>Whangārei Fringe Festival - Assistant Technition</li>
+        <li>WBHS Media Committee</li>
+      </ul>
+    </div>
+	<div class="soft">
+		<h2>Soft skills</h2>
+		<ul>
+			<li>Mentoring</li>
+			<li>Leadership</li>
+			<!-- <li>Orgnisation</li> -->
+		</ul>
+	</div>
+	<div class="hard">
+		<h2>Hard skills</h2>
+		<ul>
+			<li>Coding</li>
+			<li>3D Modelling</li>
+			<li>3D Printing</li>
+			<li>CAD</li>
+			<li>Laser cutting</li>
+			<li>Soldering</li>
+			<li>Electronics</li>
+		</ul>
+	</div>
+</div>
+</Layout>
+
+<style lang="scss">
+  @use "../styles/util";
+
+  @media print {
+    :global(main) {
+      padding: 2rem !important;
+    }
+
+    .container {
+      gap: 0.5rem;
+    }
+
+    h1 {
+      font-size: 16pt;
+    }
+
+    h2 {
+      font-size: 15pt;
+    }
+
+    .contacts {
+      font-size: 10pt;
+    }
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+
+	&:not(:last-child) {
+		margin-bottom: 0.2rem;
+	}
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  .container {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "me education education"
+      "me professional professional"
+      "me community community"
+      "me soft hard";
+
+    & > div {
+      background-color: util.$color-darker;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px #101010;
+    }
+  }
+
+  .me {
+    grid-area: me;
+
+    .image-wrapper {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 1rem auto;
+      width: 200px;
+      height: 200px;
+
+      img {
+        border-radius: 100%;
+        filter: drop-shadow(0 0 10px black);
+      }
+
+      :global(svg) {
+        filter: drop-shadow(0 0 5px black);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 75px;
+        height: 75px;
+      }
+    }
+
+    .second-text {
+      color: util.$text-darker;
+      font-weight: lighter;
+      font-size: 15pt;
+      text-align: center;
+    }
+
+    h2 {
+      padding-top: 1rem;
+    }
+
+    .contacts {
+      text-align: center;
+
+      span {
+        font-weight: bolder;
+      }
+    }
+  }
+
+  h1 {
+    padding-bottom: 0.5rem;
+  }
+
+  h2 {
+    padding-bottom: 0.3rem;
+  }
+
+  .education {
+    grid-area: education;
+  }
+
+  .professional {
+    grid-area: professional;
+  }
+
+  .community {
+    grid-area: community;
+  }
+
+  .soft {
+	  grid-area: soft;
+  }
+
+  .hard {
+	  grid-area: hard;
+  }
+</style>

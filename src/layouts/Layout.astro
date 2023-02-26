@@ -1,5 +1,11 @@
 ---
 import "../styles/app.scss";
+
+interface Props {
+  footer?: boolean;
+}
+
+const { footer = true } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -29,13 +35,17 @@ import "../styles/app.scss";
       <slot />
     </main>
 
-    <footer>
-      &copy; Nathan Hare 2022
-      <a href="/">Home</a>
-      <span class="cw">
-        Rights to all Logo go to their respective copyright holders.
-      </span>
-    </footer>
+    {
+      footer && (
+        <footer>
+          &copy; Nathan Hare 2022
+          <a href="/">Home</a>
+          <span class="cw">
+            Rights to all Logo go to their respective copyright holders.
+          </span>
+        </footer>
+      )
+    }
 
     <style lang="scss">
       @use "../styles/util";
