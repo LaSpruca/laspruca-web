@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+	transition:
+		background-color 0.5s ease-in-out,
+		color 0.5s ease-in-out,
+        box-shadow 0.5s ease-in-out;
+}
