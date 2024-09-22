@@ -11,21 +11,19 @@
 			class="m-auto rounded-full pb-10"
 		/>
 		<div>
-			<h1 class="pb-5 text-3xl font-bold text-primary">Hi I'm Connor</h1>
+			<h1 class="pb-5 text-3xl font-bold text-primary">Hi, I'm Connor</h1>
 			<p class="pb-10 text-xl text-primary">
 				I'm a second year Software Engineering student at the University of Auckland who spends way
-				to much time building random stuff.
+				too much time building random stuff.
 			</p>
 			<p class="pb-5 text-lg text-primary">
-				I'm a second-year Software Engineering student at the University of Auckland who spends way
-				too much time building random stuff. Originally from Whangārei, I'm now in Auckland studying
-				for my Bachelor of Engineering, specializing in Software Engineering.
+				Originally from Whangārei, I'm now in Auckland studying for my Bachelor of Engineering.
 			</p>
 			<p class="pb-5 text-lg text-primary">
-				Ever since I was young, I have wanted to work with computers until I was in intermediate
-				school, when I discovered coding. From then on, it was pretty clear what I wanted to do.
-				Since then, I have been hacking away at my own silly little projects until I found my group
-				of people at a little community group in Whangārei called<a
+				Ever since I was young, I have wanted to work with computers and when I discovered coding in
+				intermediate school, it was pretty clear what I wanted to do. Since then, I have been
+				hacking away at my own silly little projects until I found my group of people at a little
+				community group in Whangārei called<a
 					href="https://qrl.nz"
 					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
 					>Questionable Research Labs</a
@@ -48,8 +46,8 @@
 				>.
 			</p>
 			<p class="pb-5 text-lg text-primary">
-				Nowadays, I am studying software engineering at the University of Auckland, and I'm in my
-				second year. I also work alongside my studies with two main jobs, one for a startup called
+				Nowadays, while studying, I also work alongside my studies with two main jobs, one for a
+				startup called
 				<a
 					href="https://fathomiser.com/"
 					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]">Fathomiser</a
@@ -58,7 +56,7 @@
 				<a
 					href="https://unleashspace.ac.nz/"
 					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
-					>Univesity of Auckland's Centre for Innovation and Entropenureship's Maker Space</a
+					>University of Auckland's Centre for Innovation and Entropenureship's Maker Space</a
 				>. I'm also the vice president of the
 				<a
 					href="https://makeuoa.nz/"
@@ -68,12 +66,11 @@
 			</p>
 			<p class="pb-16 text-lg text-primary">
 				Outside of all my studying, working and hackathoning, I still enjoy my own personal
-				projects. In addition, I really enjoy playing field hockey and swimming. I have taken a bit
-				of a break from both, but I am looking into getting back into next year and late this year,
-				respectively. I also really love to learn about things across a wide array of topics.
-				Sometimes, it's the Amazon rainforest; others, it's the economic effects of building more
-				toll roads in City Skylines. The topics I am most interested in are public transport,
-				especially trains, aviation, and software development.
+				projects. In addition, I really enjoy playing field hockey and swimming. I also really love
+				to learn about things across a wide array of topics. Sometimes, it's the Amazon rainforest;
+				others, it's the economic effects of building more toll roads in City Skylines. The topics I
+				am most interested in are public transport, especially trains, aviation, and software
+				development.
 			</p>
 			<div class="m-auto w-3/4 rounded-lg bg-glass p-10 backdrop-blur-sm">
 				<h2 class="pb-10 text-center text-2xl font-bold text-primary">Wanna have a chat?</h2>
