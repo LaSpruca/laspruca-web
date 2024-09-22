@@ -67,11 +67,12 @@
 		<h2 class="text-center text-3xl font-bold text-secondary lg:text-right">LaSpruca</h2>
 	</div>
 	<div class="flex max-w-[90%] flex-wrap justify-center gap-5 lg:w-[50%]">
-		<button
+		<a
+			href="/about"
 			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
 		>
 			About
-		</button>
+		</a>
 		<button
 			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
 		>
@@ -80,7 +81,7 @@
 		<button
 			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
 		>
-			Resume
+			Résumé
 		</button>
 	</div>
 </div>
