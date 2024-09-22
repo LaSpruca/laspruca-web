@@ -67,13 +67,13 @@
 				>.
 			</p>
 			<p class="pb-16 text-lg text-primary">
-				Outside of all my studing, working and hackathoning, I still enjoy my own personal projects.
-				As well as that, I really enjoy field hockey, and swimming. Both of which I have take a bit
-				of a break from, but am looking into getting back into next year and late this year
-				repectively. I also really love to learn about things across a wide array of topics.
-				Sometimes it's the amazon rainforest, others, it's the economic effects of building more
-				toll roads in City Skylines. The topics that I have the most interest though are public
-				transport, especailly trains, avatian, and software development.
+				Outside of all my studying, working and hackathoning, I still enjoy my own personal
+				projects. In addition, I really enjoy playing field hockey and swimming. I have taken a bit
+				of a break from both, but I am looking into getting back into next year and late this year,
+				respectively. I also really love to learn about things across a wide array of topics.
+				Sometimes, it's the Amazon rainforest; others, it's the economic effects of building more
+				toll roads in City Skylines. The topics I am most interested in are public transport,
+				especially trains, aviation, and software development.
 			</p>
 			<div class="m-auto w-3/4 rounded-lg bg-glass p-10 backdrop-blur-sm">
 				<h2 class="pb-10 text-center text-2xl font-bold text-primary">Wanna have a chat?</h2>
