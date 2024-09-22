@@ -1,0 +1,33 @@
+[
+	{
+		"title": "Ocean Tax",
+		"description": "Created as part of GovHack 2024, this is a project to help people understand the impacts of rising oceans, by telling them how long their until their property goes under water, using a really simple model to describe the changes in water level, accounting for not just sea level rise, but also tectonic movement.",
+		"link": "https://water.haxx.nz",
+		"repo": "https://github.com/govhack-2024/Report-Card"
+	},
+	{
+		"title": "Threatenotor",
+		"description": "Created as part of the Terrible Ideas Hackathon 2024, a 3D printer that my team and I converted into a pen plotter. We then made a service that allowed someone to input an address and a message. That message would then be printed out on a piece of paper by the pen plotter with a map that had the location in question highlighted.",
+		"repo": "https://github.com/questionable-innovations/autothreats"
+	},
+	{
+		"title": "WASMBC",
+		"description": "A work in progress WASM to Java Bytecode translator",
+		"repo": "https://github.com/LaSpruca/wasmbc"
+	},
+	{
+		"title": "Maker Club Laser Cut Jewellery Repository",
+		"description": "A website and discord bot for members of the make club to show of their own designs for jewellery that can be made on the maker space laser cutter. Other members can then go and download these designs from the website. Submission is handeled through a discord bot.",
+		"repo": "https://github.com/LaSpruca/makerclub-jewellery-repository"
+	},
+	{
+		"title": "The Game",
+		"description": "Created as part KiwiJam 2024. A multiplayer game where about escaping from a maze. You can play as three different roles: lost, the creature, and the director. The lost must get to the exit, being assisted by the director, who can see the whole map. As the lost try to escape, the creature will be lurking.",
+		"repo": "https://github.com/questionable-research-labs/kiwijam24"
+	},
+	{
+		"title": "GroundBus",
+		"description": "A co-op motorized couch",
+		"link": "https://jmw.nz/projects/MotorisedCouch"
+	}
+]

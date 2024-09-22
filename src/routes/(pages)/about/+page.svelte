@@ -7,8 +7,9 @@
 		<enhanced:img
 			src={meImage}
 			alt="An image of me"
+			height="300"
 			width="300"
-			class="m-auto rounded-full pb-10"
+			class="m-auto mb-10 rounded-full"
 		/>
 		<div>
 			<h1 class="pb-5 text-3xl font-bold text-primary">Hi, I'm Connor</h1>
