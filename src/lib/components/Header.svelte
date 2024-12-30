@@ -25,14 +25,3 @@
 
 <div class="h-[calc(2.5rem+120px)] md:h-[6rem]"></div>
 
-<style>
-	.active {
-		@apply text-primary;
-	}
-
-
-
-	a {
-		transition: all 0.2s ease-in-out;
-	}
-</style>
