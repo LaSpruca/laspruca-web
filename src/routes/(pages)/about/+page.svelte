@@ -14,7 +14,7 @@
 		<div>
 			<h1 class="pb-5 text-3xl font-bold text-primary">Hi, I'm Connor</h1>
 			<p class="pb-10 text-xl text-primary">
-				I'm a second year Software Engineering student at the University of Auckland who spends way
+				I'm a Software Engineer at Watchful. I spend way
 				too much time building random stuff.
 			</p>
 			<p class="pb-5 text-lg text-primary">
@@ -28,7 +28,7 @@
 					href="https://qrl.nz"
 					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
 					>Questionable Research Labs</a
-				>. Through Questionable Research Labs, I found a group of like-minded people to work on my
+				>.</p><p> Through Questionable Research Labs, I found a group of like-minded people to work on my
 				silly little projects together. In addition to providing me with space to work on projects
 				with friends, QRL also introduced me to hackathons, with my first hackathon being
 				<a
