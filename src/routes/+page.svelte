@@ -47,8 +47,8 @@
 	}
 </script>
 
-<div class="absolute left-0 right-0 h-screen w-screen bg-bg">
-	<div class="relative m-[5vh_5vw] h-[calc(90vh-20rem)] w-[calc(90vw-20rem)]">
+<div class="absolute left-0 right-0 h-screen w-screen bg-bg  overflow-hidden">
+	<div class="relative h-screen w-screen">
 		<Circle color="#FF0000" position={toPercent(circPositions[0])} />
 		<Circle color="#DD4E02" position={toPercent(circPositions[1])} />
 		<Circle color="#3B006B" position={toPercent(circPositions[2])} />
@@ -57,31 +57,30 @@
 	</div>
 </div>
 <div
-	class="absolute m-[5vh_5vw] flex h-[90vh] w-[90vw] flex-col items-center justify-center gap-10 rounded-lg bg-glass shadow-lg shadow-shadow backdrop-blur-[15rem] lg:flex-row"
+	class="absolute flex h-screen w-screen flex-col justify-between gap-10 rounded-lg  shadow-lg shadow-shadow backdrop-blur-[15rem]"
 >
-	<div class="lg:w-[50%]">
-		<h1 class="text-center text-5xl font-bold text-primary lg:text-right lg:text-9xl">
-			Connor<br />
-			Hare
-		</h1>
-		<h2 class="text-center text-3xl font-bold text-secondary lg:text-right">LaSpruca</h2>
+	<div class="m-12">
+		<h1 class=" text-8xl font-bold text-primary">Connor Hare is a Software Engineer</h1>
+		<h2 class=" mt-5 text-3xl text-secondary">You can find him as Laspruca on the interwebs</h2>
 	</div>
-	<div class="flex max-w-[90%] flex-wrap justify-center gap-5 lg:w-[50%]">
+	<div class="m-12 flex flex-row gap-8 ">
 		<a
 			href="/about"
-			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
+			class="rounded-lg px-8 py-2 text-xl font-bold text-white bg-glass text-glass-text  "
 		>
 			About
 		</a>
-		<button
-			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
-		>
-			Projects
-		</button>
-		<button
-			class="rounded-lg bg-glass px-4 py-2 text-xl font-bold text-glass-text shadow-sm shadow-shadow backdrop-blur-3xl lg:text-3xl"
-		>
-			Résumé
-		</button>
+		<a
+		href="/projects"
+		class="rounded-lg px-8 py-2 text-xl font-bold text-white bg-glass text-glass-text"
+	>
+		Projects
+	</a>
+	<a
+		href="https://github.com/laspruca"
+		class="rounded-lg px-8 py-2 text-xl font-bold text-white bg-glass text-glass-text"
+	>
+		GitHub
+	</a>
 	</div>
 </div>

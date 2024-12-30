@@ -2,20 +2,21 @@
 	import projects from '$lib/projects.json';
 </script>
 
-<div class="m-auto flex w-full max-w-screen-lg flex-row flex-wrap justify-center gap-10 p-10">
+<div class=" grid grid-cols-6  max-2xl:grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-center gap-6 m-6 ">
 	{#each projects as project}
 		<div
-			class="flex w-96 max-w-full flex-col justify-between rounded-lg bg-glass p-5 shadow-sm shadow-shadow"
-		>
-			<div class="pb-5">
-				<h2 class="pb-5 text-xl font-bold text-primary">{project.title}</h2>
+			class="flex w-full max-w-full flex-col justify-between rounded-lg bg-white shadow-lg border border-gray-300"
+		>	<div><h2 class="text-xl font-bold text-primary p-4 border-b">{project.title}</h2>
+			<div class="p-5 pt-3">
+			
 				<span class="text-primary">{project.description}</span>
 			</div>
-			<div class="flex flex-row justify-center">
+		</div>
+			<div class="flex flex-row justify-start border-t max-mdflex-wrap">
 				{#if project.link}
 					<a
 						href={project.link}
-						class="m-3 flex flex-row items-center gap-2 rounded-sm bg-glass px-3 py-1 shadow-sm shadow-shadow"
+						class=" flex flex-row items-center gap-2  m-3 rounded-full border-blue-400 border px-3 py-1 "
 					>
 						<svg
 							width="24px"
@@ -26,19 +27,19 @@
 						>
 							<path
 								d="M13.5442 10.4558C11.8385 8.75022 9.07316 8.75022 7.36753 10.4558L4.27922 13.5442C2.57359 15.2498 2.57359 18.0152 4.27922 19.7208C5.98485 21.4264 8.75021 21.4264 10.4558 19.7208L12 18.1766"
-								class="stroke-primary"
+								class="stroke-blue-700"
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
 							/>
 							<path
 								d="M10.4558 13.5442C12.1614 15.2498 14.9268 15.2498 16.6324 13.5442L19.7207 10.4558C21.4264 8.75021 21.4264 5.98485 19.7207 4.27922C18.0151 2.57359 15.2497 2.57359 13.5441 4.27922L12 5.82338"
-								class="stroke-primary"
+								class="stroke-blue-700"
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
 							/>
-							<span class="font-bold text-primary">Link</span>
+							<span class="font-medium text-blue-700">Link</span>
 						</svg>
 					</a>
 				{/if}
@@ -46,7 +47,8 @@
 				{#if project.repo}
 					<a
 						href={project.repo}
-						class="m-3 flex flex-row items-center gap-2 rounded-sm bg-glass px-3 py-1 shadow-sm shadow-shadow"
+						
+						class=" flex flex-row items-center gap-2  m-3 rounded-full border-blue-400 border px-3 py-1 "
 					>
 						<svg viewBox="0 0 98 96" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg"
 							><path
@@ -56,7 +58,7 @@
 								class="fill-primary"
 							/></svg
 						>
-						<span class="font-bold text-primary">Git Repo</span>
+						<span class="font-medium text-blue-700">Git Repo</span>
 					</a>
 				{/if}
 			</div>

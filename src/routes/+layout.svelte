@@ -12,7 +12,7 @@
 
 <div class="root bg-bg" class:dark class:default-scheme={dark === undefined}>
 	{@render children()}
-	<DarkButton isDark={dark} setDark={(isDark) => (dark = isDark)} />
+	<!-- <DarkButton isDark={dark} setDark={(isDark) => (dark = isDark)} /> -->
 </div>
 
 <style>
@@ -24,7 +24,7 @@
 		--secondary: #555;
 
 		--shadow: #aaa;
-		--glass: rgb(0 0 0 / 25%);
+		--glass: rgb(0 0 0 / 40%);
 		--glass-text: #ccc;
 	}
 
@@ -36,7 +36,7 @@
 		--secondary: #aaa;
 
 		--shadow: #3e3e3e;
-		--glass: rgb(255 255 255 / 25%);
+		--glass: rgb(255 255 255 / 34%);
 		--glass-text: #eee;
 	}
 

@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+	font-family: "Funnel Display", serif;
+	font-optical-sizing: auto;
+}
+
 * {
 	transition:
 		background-color 0.5s ease-in-out,

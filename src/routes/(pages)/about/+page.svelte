@@ -2,67 +2,54 @@
 	import meImage from '$assets/me.png?enhanced';
 </script>
 
-<div class="m-auto max-w-screen-md p-10">
-	<div class="flex flex-col">
+<div class="m-auto max-w-[1440px] p-10">
+	<div class="flex  gap-12 max-xl:flex-col max-xl:items-start">
 		<enhanced:img
 			src={meImage}
 			alt="An image of me"
 			height="300"
 			width="300"
-			class="m-auto mb-10 rounded-full"
+			class="m-auto mb-10 rounded-md shadow-lg shadow-shadow w-screen max-w-[20rem]"
 		/>
-		<div>
+		<div class=" text-lg">
 			<h1 class="pb-5 text-3xl font-bold text-primary">Hi, I'm Connor</h1>
 			<p class="pb-10 text-xl text-primary">
-				I'm a Software Engineer at Watchful. I spend way
+				I do engineering at Watchful. I spend far
 				too much time building random stuff.
 			</p>
-			<p class="pb-5 text-lg text-primary">
-				Originally from Whangārei, I'm now in Auckland studying for my Bachelor of Engineering.
-			</p>
-			<p class="pb-5 text-lg text-primary">
-				Ever since I was young, I have wanted to work with computers and when I discovered coding in
-				intermediate school, it was pretty clear what I wanted to do. Since then, I have been
+			<p class="pb-5">
+				Originally from Whangārei, I'm now in Auckland working as a Senior Software Engineer at <a href="https://watchful.co.nz" class="underline text-blue-600">Watchful</a>. In my spare time, I am also studying for a Bachelor of Software Engineering at the University of Auckland.
+			</p><p class="pb-5">
+				Ever since I was young, I wanted to work with computers. When I discovered coding at
+				intermediate school, it became pretty clear what I wanted to do. Since then, I have been
 				hacking away at my own silly little projects until I found my group of people at a little
-				community group in Whangārei called<a
+				community group in Whangārei called <a
 					href="https://qrl.nz"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
+					class="underline text-blue-600 backdrop-blur-[15rem]"
 					>Questionable Research Labs</a
-				>.</p><p> Through Questionable Research Labs, I found a group of like-minded people to work on my
+				> 	</p><p class="pb-5">Through Questionable Research Labs, I found a group of like-minded people to work on my
 				silly little projects together. In addition to providing me with space to work on projects
 				with friends, QRL also introduced me to hackathons, with my first hackathon being
 				<a
 					href="https://govhack.org"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]">GovHack</a
+					class="underline text-blue-600">GovHack</a
 				>
 				way back in 2019. As well as GovHack, me and my friends also like to participate in
 				<a
 					href="https://kiwijam.nz"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]">KiwiJam</a
+					class="underline text-blue-600">KiwiJam</a
 				>
 				and
 				<a
 					href="https://terriblehack.com/"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]">Terrible Ideas</a
+					class="underline text-blue-600">Terrible Ideas</a
 				>.
 			</p>
 			<p class="pb-5 text-lg text-primary">
-				Nowadays, while studying, I also work alongside my studies with two main jobs, one for a
-				startup called
-				<a
-					href="https://fathomiser.com/"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]">Fathomiser</a
-				>
-				as their software engineer and as a creative technologist at the
-				<a
-					href="https://unleashspace.ac.nz/"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
-					>University of Auckland's Centre for Innovation and Entropenureship's Maker Space</a
-				>. I'm also the vice president of the
+				 I'm also the vice president of the
 				<a
 					href="https://makeuoa.nz/"
-					class="rounded-sm bg-glass p-1 text-primary backdrop-blur-[15rem]"
-					>University of Aucklands Maker Club</a
+					class="underline text-blue-600">University of Aucklands Maker Club</a
 				>.
 			</p>
 			<p class="pb-16 text-lg text-primary">
@@ -73,11 +60,11 @@
 				am most interested in are public transport, especially trains, aviation, and software
 				development.
 			</p>
-			<div class="m-auto w-full rounded-lg bg-glass p-10 backdrop-blur-sm md:w-3/4">
-				<h2 class="pb-10 text-center text-2xl font-bold text-primary">Wanna have a chat?</h2>
-				<div class="flex flex-row flex-wrap justify-around gap-5">
+			<div class=" backdrop-blur-sm md:w-3/4">
+				<h2 class=" text-2xl font-semibold text-primary">Wanna have a chat?</h2>
+				<div class=" flex gap-5 mt-4 max-lg:flex-col">
 					<a
-						class="flex w-fit flex-row items-center gap-2 rounded-sm bg-glass p-1 backdrop-blur-[15rem]"
+						class="flex w-fit flex-row items-center gap-3 border-gray-300 border rounded-md p-1 px-2 backdrop-blur-[15rem]"
 						href="mailto:contact@laspruca.nz"
 					>
 						<svg
@@ -89,7 +76,7 @@
 						>
 							<path
 								d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7"
-								class="stroke-glass-text"
+								class="stroke-blue-700"
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
@@ -100,29 +87,29 @@
 								width="18"
 								height="14"
 								rx="2"
-								class="stroke-glass-text"
+								class="stroke-blue-700"
 								stroke-width="2"
 								stroke-linecap="round"
 							/>
 						</svg>
-						<span class="font-bold text-glass-text">contact@laspruca.nz</span>
+						<span class=" text-blue-700">contact@laspruca.nz</span>
 					</a>
 
 					<a
 						href="https://discord.com/users/403646951259635713"
-						class="flex w-fit flex-row items-center gap-2 rounded-sm bg-glass p-1 backdrop-blur-[15rem]"
+						class="flex w-fit flex-row items-center gap-3 p-1 px-3 backdrop-blur-[15rem] border-gray-300 border rounded-md"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" width="24px"
 							><path
-								class="fill-glass-text"
+								class="fill-blue-700"
 								d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
 							/></svg
 						>
-						<span class="font-bold text-glass-text">LaSpruca</span>
+						<span class="text-blue-700">LaSpruca</span>
 					</a>
 					<a
 						href="https://github.com/LaSpruca"
-						class="flex w-fit flex-row items-center gap-2 rounded-sm bg-glass p-1 backdrop-blur-[15rem]"
+						class="flex w-fit flex-row items-center gap-2 rounded-md border border-gray-300 p-1 px-3 backdrop-blur-[15rem]"
 					>
 						<svg viewBox="0 0 98 96" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg"
 							><path
@@ -132,7 +119,7 @@
 								class="fill-primary"
 							/></svg
 						>
-						<span class="font-bold text-glass-text">LaSpruca</span>
+						<span class="text-blue-700">LaSpruca</span>
 					</a>
 				</div>
 			</div>
