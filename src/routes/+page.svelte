@@ -57,13 +57,13 @@
 	</div>
 </div>
 <div
-	class="absolute flex h-screen w-screen flex-col justify-between gap-10 rounded-lg  shadow-lg shadow-shadow backdrop-blur-[15rem]"
+	class="absolute flex h-screen w-screen flex-col justify-center gap-10 rounded-lg  shadow-lg shadow-shadow backdrop-blur-[15rem]"
 >
-	<div class="m-12">
-		<h1 class=" text-8xl font-bold text-primary">Connor Hare is a Software Engineer</h1>
+	<div class="mx-12">
+		<h1 class=" text-6xl font-bold text-primary">Connor Hare is a Software Engineer</h1>
 		<h2 class=" mt-5 text-3xl text-secondary">You can find him as Laspruca on the interwebs</h2>
 	</div>
-	<div class="m-12 flex flex-row gap-8 ">
+	<div class="mx-12 flex flex-row gap-8 ">
 		<a
 			href="/about"
 			class="rounded-lg px-8 py-2 text-xl font-bold text-white bg-glass text-glass-text  "
