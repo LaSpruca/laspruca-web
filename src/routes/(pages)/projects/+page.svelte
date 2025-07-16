@@ -1,22 +1,65 @@
 <script lang="ts">
 	import projects from '$lib/projects.json';
-</script>
 
-<div class=" grid grid-cols-6  max-2xl:grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-center gap-6 m-6 ">
-	{#each projects as project}
+	let searchQuery = '';
+
+	$: filteredProjects = projects.filter(project => {
+		if (!searchQuery.trim()) return true;
+		const query = searchQuery.toLowerCase();
+		return project.title.toLowerCase().includes(query) || 
+		       project.description.toLowerCase().includes(query);
+	});
+</script>
+<div></div>
+<!-- Search Component -->
+<div class="max-w-[1440px] mx-auto px-6 bg-white border rounded-lg pt-6 shadow-md border-gray-300">
+	<h1 class="text-2xl font-bold text-primary mb-4">Projects</h1>
+	<div class="relative mb-6">
+		<input
+			type="text"
+			bind:value={searchQuery}
+			placeholder="Search projects by title or description..."
+			class="w-full px-4 py-3 pl-12 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+		/>
+		<svg
+			class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+			></path>
+		</svg>
+	</div>
+</div>
+
+<!-- Projects Grid -->
+<div class="grid max-w-[1440px] grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-center gap-6 m-6 mx-auto">
+	{#if filteredProjects.length === 0 && searchQuery.trim()}
+		<div class="col-span-full text-center py-12">
+			<div class="text-gray-500 text-lg mb-2">No projects found</div>
+			<div class="text-gray-400 text-sm">Try adjusting your search terms</div>
+		</div>
+	{:else}
+		{#each filteredProjects as project}
 		<div
 			class="flex w-full max-w-full flex-col justify-between rounded-lg bg-white shadow-lg border border-gray-300"
 		>	<div><h2 class="text-xl font-bold text-primary p-4 border-b">{project.title}</h2>
 			<div class="p-5 pt-3">
 			
-				<span class="text-primary">{project.description}</span>
+				<span class="text-primary text-sm leading-tight">{project.description}</span>
 			</div>
 		</div>
-			<div class="flex flex-row justify-start border-t max-mdflex-wrap">
+			<div class="flex flex-row justify-start border-t max-md:flex-wrap">
 				{#if project.link}
 					<a
 						href={project.link}
-						class=" flex flex-row items-center gap-2  m-3 rounded-full border-blue-400 border px-3 py-1 "
+						class=" flex flex-row items-center gap-2  m-3 mr-0 rounded-full border-blue-400 border px-3 py-1 "
 					>
 						<svg
 							width="24px"
@@ -48,7 +91,7 @@
 					<a
 						href={project.repo}
 						
-						class=" flex flex-row items-center gap-2  m-3 rounded-full border-blue-400 border px-3 py-1 "
+						class=" flex flex-row items-center gap-2  m-3 ml-1 rounded-full border-blue-400 border px-3 py-1 "
 					>
 						<svg viewBox="0 0 98 96" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg"
 							><path
@@ -63,5 +106,6 @@
 				{/if}
 			</div>
 		</div>
-	{/each}
+		{/each}
+	{/if}
 </div>
