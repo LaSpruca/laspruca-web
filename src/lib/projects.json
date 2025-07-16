@@ -1,9 +1,47 @@
+
+
 [
+	{
+		"title": "yap",
+		"description": "This is just a small little expirement to try and see if I can make some sort of JS framework using Signals.",
+
+		"repo": "https://github.com/LaSpruca/yap"
+	},
+	{
+		"title": "Watchful",
+		"description": "Physical Security Platform that catches bad guys.",
+		"link": "https://watchful.co.nz",
+		"repo": "https://github.com/watchful-IP/"
+	},
 	{
 		"title": "Ocean Tax",
 		"description": "Created as part of GovHack 2024, this is a project to help people understand the impacts of rising oceans, by telling them how long their until their property goes under water, using a really simple model to describe the changes in water level, accounting for not just sea level rise, but also tectonic movement.",
 		"link": "https://water.haxx.nz",
 		"repo": "https://github.com/govhack-2024/Report-Card"
+	},
+	{
+		"title": "drive-pi",
+		"description": "A simple way to serve files with samba from USB sticks.",
+
+		"repo": "https://github.com/LaSpruca/drive-pi"
+	},
+	{
+		"title": "Dirty Watts",
+		"description": "A Dashboard and API to pull together the power sources of the NZ power grid.",
+
+		"repo": "https://github.com/Questionable-Research-Labs/DirtyWatts"
+	},
+	{
+		"title": "ST Lang",
+		"description": "A really bad stack basead programming language.",
+
+		"repo": "https://github.com/LaSpruca/st-lang"
+	},
+	{
+		"title": "haxor",
+		"description": "A small tool to help deploy your shitty hackathon projects to your own shitty kubernetes clutser.",
+
+		"repo": "https://github.com/LaSpruca/haxor"
 	},
 	{
 		"title": "Threatenotor",
